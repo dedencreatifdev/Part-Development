@@ -13,6 +13,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Stack;
@@ -132,25 +133,32 @@ class ProdukResource extends Resource
             ->columns([
                 Stack::make([
                     // Columns
+                    ImageColumn::make('avatar')
+                        ->size('100%')
+                        ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
+                    TextColumn::make('KDBR')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->weight(FontWeight::Bold)
+                        ->sortable()
+                        ->searchable(),
+                    TextColumn::make('NAMA')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->limit(15)
+                        ->searchable(),
+                    TextColumn::make('KDGROUP')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->searchable(),
+                    TextColumn::make('KDLOKASI')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->searchable(),
+                    TextColumn::make('SATUAN')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->searchable(),
+                    TextColumn::make('HRG_JUAL')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->weight(FontWeight::Bold)
+                        ->numeric(),
                 ]),
-                TextColumn::make('KDBR')
-                    ->searchable(),
-                TextColumn::make('NAMA')
-                    ->searchable(),
-                TextColumn::make('PRODUKSI')
-                    ->searchable(),
-                TextColumn::make('KDGROUP')
-                    ->searchable(),
-                TextColumn::make('KDLOKASI')
-                    ->searchable(),
-                TextColumn::make('SATUAN')
-                    ->searchable(),
-                TextColumn::make('HRG_BELI')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('HRG_JUAL')
-                    ->numeric()
-                    ->sortable(),
             ])
             ->contentGrid([
                 'default' => 2,
@@ -159,7 +167,7 @@ class ProdukResource extends Resource
                 'xl' => 4,
                 '2xl' => 5,
             ])
-            ->paginated([24, 50, 100, 'all'])
+            ->paginated([25, 50, 100, 'all'])
 
             ->filters([
                 //
