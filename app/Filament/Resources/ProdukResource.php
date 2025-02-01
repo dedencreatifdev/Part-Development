@@ -164,10 +164,10 @@ class ProdukResource extends Resource
                 'default' => 2,
                 'md' => 3,
                 'lg' => 4,
-                'xl' => 4,
-                '2xl' => 5,
+                'xl' => 5,
+                '2xl' => 6,
             ])
-            ->paginated([25, 50, 100, 'all'])
+            ->paginated([24, 50, 100, 'all'])
 
             ->filters([
                 //
