@@ -29,7 +29,7 @@ class DashboardOverview extends BaseWidget
                 ->color('success')
                 ->extraAttributes([
                     'class' => 'cursor-pointer',
-                    'wire:click' => "\$dispatch('setStatusFilter', { filter: 'processed' })",
+                    'wire:click' => route('filament.admin.resources.produks.index')
                 ]),
 
         ];

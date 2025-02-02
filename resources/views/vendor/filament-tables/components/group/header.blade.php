@@ -22,7 +22,7 @@
     <div class="grid">
         <h4 class="text-sm font-medium text-gray-950 dark:text-white">
             @if (filled($label))
-                {{ $label }}:
+                {{-- {{ $label }}: --}}
             @endif
 
             {{ $title }}

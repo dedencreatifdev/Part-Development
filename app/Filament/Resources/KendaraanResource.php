@@ -22,33 +22,41 @@ class KendaraanResource extends Resource
 {
     protected static ?string $model = Kendaraan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Settings';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('no_polisi')
-                ->prefixIcon('heroicon-o-truck')
+                    ->label('No Polisi')
+                    ->prefixIcon('heroicon-o-truck')
                     ->required()
                     ->maxLength(255),
                 TextInput::make('kdnsb')
+                    ->label('Kode Nasabah')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kdjns')
+                ->label('Kode Jenis')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kendaraan')
+                ->label('Kendaraan')
                     ->columnSpanFull()
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kdtype')
+                ->label('Kode Type')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_chasis')
+                ->label('Nomor Chasis')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_mesin')
+                ->label('Nomor Mesin')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_seri')

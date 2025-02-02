@@ -25,7 +25,7 @@
                 {{ $label }}:
             @endif
 
-            {{ $title }}
+            {{-- {{ $title }} --}}
         </h4>
 
         @if (filled($description))

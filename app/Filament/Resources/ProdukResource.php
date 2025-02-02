@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProdukResource\Pages;
 use App\Filament\Resources\ProdukResource\RelationManagers;
 use App\Models\Produk;
+use Filament\Actions\Contracts\Groupable;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
@@ -13,6 +14,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\ActionSize;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Actions\Action;
@@ -27,7 +29,8 @@ class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Produk';
 
     public static function form(Form $form): Form
     {
@@ -175,16 +178,6 @@ class ProdukResource extends Resource
                         ->numeric(),
                 ]),
             ])
-            ->groups([
-                'KDGROUP' => 'grup',
-            ])
-            ->groupRecordsTriggerAction(
-                fn(Action $action) => $action
-                    ->button()
-                    ->label('Group records'),
-            )
-            ->defaultGroup('KDGROUP')
-
             ->contentGrid([
                 'default' => 2,
                 'md' => 3,
@@ -192,6 +185,11 @@ class ProdukResource extends Resource
                 'xl' => 5,
                 '2xl' => 6,
             ])
+            // ->groups([
+            //     'KDGROUP',
+            // ])
+            ->defaultGroup('FT_NMGROUP')
+
             ->paginated([24, 50, 100, 'all'])
 
             ->filters([
@@ -201,6 +199,7 @@ class ProdukResource extends Resource
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),
                 Tables\Actions\ViewAction::make()
+                    ->size(ActionSize::ExtraSmall)
                     ->label('Lihat Detail')
                     ->icon('heroicon-o-clipboard-document-list')
                     ->color('primary'),
