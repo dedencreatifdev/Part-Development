@@ -8,6 +8,13 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class DashboardOverview extends BaseWidget
 {
+
+    protected ?string $heading = 'Analytics';
+
+    protected ?string $description = 'An overview of some analytics.';
+
+    protected ?int $coloum = 6;
+
     protected function getStats(): array
     {
         return [

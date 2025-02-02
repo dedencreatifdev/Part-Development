@@ -32,6 +32,11 @@ class ProdukResource extends Resource
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Produk';
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereNot('FT_NMGROUP', 'sm');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
