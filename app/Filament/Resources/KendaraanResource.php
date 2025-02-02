@@ -39,24 +39,24 @@ class KendaraanResource extends Resource
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kdjns')
-                ->label('Kode Jenis')
+                    ->label('Kode Jenis')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kendaraan')
-                ->label('Kendaraan')
+                    ->label('Kendaraan')
                     ->columnSpanFull()
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('kdtype')
-                ->label('Kode Type')
+                    ->label('Kode Type')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_chasis')
-                ->label('Nomor Chasis')
+                    ->label('Nomor Chasis')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_mesin')
-                ->label('Nomor Mesin')
+                    ->label('Nomor Mesin')
                     ->maxLength(255)
                     ->default(null),
                 TextInput::make('no_seri')
@@ -125,6 +125,7 @@ class KendaraanResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('tahun'),
                 Tables\Columns\TextColumn::make('ft_nmpemilik')
+                    ->wrap()
                     ->searchable(),
             ])
             ->striped()
