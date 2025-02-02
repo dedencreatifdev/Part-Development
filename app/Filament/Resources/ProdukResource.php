@@ -32,10 +32,15 @@ class ProdukResource extends Resource
     {
         return $form
             ->schema([
+                FileUpload::make('image')
+                    ->columnSpanFull()
+                    ->image(),
                 TextInput::make('KDBR')
+                    ->label('Kode Barang')
                     ->maxLength(100)
                     ->default(null),
                 TextInput::make('NAMA')
+                    ->label('Nama Barang')
                     ->maxLength(50)
                     ->default(null),
                 TextInput::make('PRODUKSI')
@@ -56,75 +61,77 @@ class ProdukResource extends Resource
                 TextInput::make('HRG_JUAL')
                     ->numeric()
                     ->default(null),
-                TextInput::make('HRG_HPP')
-                    ->maxLength(50)
-                    ->default(null),
-                TextInput::make('DISC_BELI')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('DISC_JUAL')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('QTY_MIN')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('QTY_MAX')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('QTY_ORD')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('MVCD')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('DLCODE')
-                    ->maxLength(50)
-                    ->default(null),
-                TextInput::make('KDNSB')
-                    ->maxLength(50)
-                    ->default(null),
-                DatePicker::make('TG_PRICE'),
-                Textarea::make('KETERANGAN')
-                    ->columnSpanFull(),
-                TextInput::make('KM_PAKAI')
-                    ->maxLength(50)
-                    ->default(null),
-                TextInput::make('STATUS')
-                    ->numeric()
-                    ->default(null),
-                DatePicker::make('TG_DAFTAR'),
-                TextInput::make('ID_KODE')
-                    ->maxLength(50)
-                    ->default(null),
-                TextInput::make('FLAG')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_QTYOB')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_QTYOJ')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_QTYAKHIR')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_HPPAKHIR')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_HPPUNIT')
-                    ->numeric()
-                    ->default(null),
-                TextInput::make('FT_NMGROUP')
-                    ->maxLength(50)
-                    ->default(null),
-                TextInput::make('FT_LOKASI')
-                    ->maxLength(50)
-                    ->default(null),
-                FileUpload::make('image')
-                    ->image(),
-                DateTimePicker::make('tgl_update')
-                    ->required(),
-            ]);
+
+
+                // TextInput::make('HRG_HPP')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // TextInput::make('DISC_BELI')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('DISC_JUAL')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('QTY_MIN')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('QTY_MAX')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('QTY_ORD')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('MVCD')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('DLCODE')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // TextInput::make('KDNSB')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // DatePicker::make('TG_PRICE'),
+                // Textarea::make('KETERANGAN')
+                //     ->columnSpanFull(),
+                // TextInput::make('KM_PAKAI')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // TextInput::make('STATUS')
+                //     ->numeric()
+                //     ->default(null),
+                // DatePicker::make('TG_DAFTAR'),
+                // TextInput::make('ID_KODE')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // TextInput::make('FLAG')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_QTYOB')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_QTYOJ')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_QTYAKHIR')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_HPPAKHIR')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_HPPUNIT')
+                //     ->numeric()
+                //     ->default(null),
+                // TextInput::make('FT_NMGROUP')
+                //     ->maxLength(50)
+                //     ->default(null),
+                // TextInput::make('FT_LOKASI')
+                //     ->maxLength(50)
+                //     ->default(null),
+
+                // DateTimePicker::make('tgl_update')
+                //     ->required(),
+            ])
+            ->columns(4);
     }
 
     public static function table(Table $table): Table
@@ -137,24 +144,29 @@ class ProdukResource extends Resource
                         ->size('100%')
                         ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
                     TextColumn::make('KDBR')
+                        ->label('Kode Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->sortable()
                         ->searchable(),
                     TextColumn::make('NAMA')
+                        ->label('Nama Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->sortable()
                         ->limit(15)
                         ->searchable(),
                     TextColumn::make('KDGROUP')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
-                    TextColumn::make('KDLOKASI')
-                        ->size(TextColumn\TextColumnSize::ExtraSmall)
-                        ->searchable(),
+                    TextColumn::make('relLokasiRak.rak')
+                        ->prefix('Lokasi : ')
+                        ->default('-')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('SATUAN')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
                     TextColumn::make('HRG_JUAL')
+                        ->prefix('Rp ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->numeric(),
@@ -175,7 +187,10 @@ class ProdukResource extends Resource
             ->actions([
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->label('Lihat Detail')
+                    ->icon('heroicon-o-clipboard-document-list')
+                    ->color('primary'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
