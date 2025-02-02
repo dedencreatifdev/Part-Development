@@ -15,6 +15,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
@@ -156,10 +157,12 @@ class ProdukResource extends Resource
                         ->limit(15)
                         ->searchable(),
                     TextColumn::make('KDGROUP')
+                        ->label('Grup')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
                     TextColumn::make('relLokasiRak.rak')
                         ->prefix('Lokasi : ')
+                        ->suffix('(Tuba)')
                         ->default('-')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('SATUAN')
@@ -172,6 +175,16 @@ class ProdukResource extends Resource
                         ->numeric(),
                 ]),
             ])
+            ->groups([
+                'KDGROUP' => 'grup',
+            ])
+            ->groupRecordsTriggerAction(
+                fn(Action $action) => $action
+                    ->button()
+                    ->label('Group records'),
+            )
+            ->defaultGroup('KDGROUP')
+
             ->contentGrid([
                 'default' => 2,
                 'md' => 3,
