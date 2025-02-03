@@ -304,7 +304,7 @@
 
                     @if ($isSelectionEnabled || count($sortableColumns))
                         <div
-                            class="flex items-center gap-4 px-4 gap-x-6 bg-gray-50 dark:bg-white/5 sm:px-6"
+                            class="flex items-center gap-2 px-2 gap-x-2 bg-gray-50 dark:bg-white/5 sm:px-2"
                         >
                             @if ($isSelectionEnabled && (! $isReordering))
                                 <x-filament-tables::selection.checkbox
@@ -350,7 +350,7 @@
                                             direction = 'asc'
                                         })
                                     "
-                                    class="flex py-3 gap-x-3"
+                                    class="flex py-2 gap-x-2"
                                 >
                                     <label>
                                         <x-filament::input.wrapper

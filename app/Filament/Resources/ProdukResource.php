@@ -188,17 +188,17 @@ class ProdukResource extends Resource
             ])
             ->contentGrid([
                 'default' => 2,
-                'md' => 3,
-                'lg' => 4,
-                'xl' => 5,
-                '2xl' => 6,
+                'md' => 4,
+                'lg' => 5,
+                'xl' => 6,
+                '2xl' => 7,
             ])
             // ->groups([
             //     'KDGROUP',
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([24, 50, 100, 'all'])
+            ->paginated([27, 50, 100, 'all'])
 
             ->filters([
                 //
