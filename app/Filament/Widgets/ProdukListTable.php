@@ -15,11 +15,13 @@ use Filament\Widgets\TableWidget as BaseWidget;
 class ProdukListTable extends BaseWidget
 {
     protected int | string | array $columnSpan = 'full';
+    protected static ?int $sort = 3;
 
     public function table(Table $table): Table
     {
         return $table
             ->heading('Produk List')
+            ->description('Daftar Harga List')
             ->query(
                 // ...
                 Produk::query()
@@ -34,15 +36,16 @@ class ProdukListTable extends BaseWidget
                         ->label('Kode Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
-                        ->sortable()
+
                         ->searchable(),
                     TextColumn::make('NAMA')
                         ->label('Nama Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
-                        ->sortable()
+
                         ->limit(15)
                         ->searchable(),
                     TextColumn::make('KDGROUP')
+                        ->badge()
                         ->label('Grup')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
@@ -62,12 +65,12 @@ class ProdukListTable extends BaseWidget
             ])
             ->contentGrid([
                 'default' => 2,
-                'md' => 4,
-                'lg' => 5,
-                'xl' => 6,
-                '2xl' => 7,
+                'md' => 5,
+                'lg' => 6,
+                'xl' => 8,
+                '2xl' => 9,
             ])
-            ->paginated([28, 50, 100, 'all'])
+            ->paginated([27, 36, 40, 50, 100, 'all'])
             ->actions([
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),
