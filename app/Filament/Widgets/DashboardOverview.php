@@ -20,7 +20,8 @@ class DashboardOverview extends BaseWidget
 
             Stat::make('Produk List', Produk::count())
                 ->icon('heroicon-o-squares-2x2')
-                ->description('Item')
+                ->description('Item (Lihat Semua)')
+                ->color('primary')
                 ->descriptionIcon('heroicon-o-square-3-stack-3d', IconPosition::Before)
                 ->url(route('filament.admin.resources.produks.index')),
             Stat::make('Pesanan', '-')

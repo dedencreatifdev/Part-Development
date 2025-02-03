@@ -32,9 +32,16 @@ class HomePages extends Page
     protected function getHeaderWidgets(): array
     {
         return [
+            // DashboardOverview::class,
+            // ProdukListTable::class,
+        ];
+    }
+
+    protected function getFooterWidgets(): array
+    {
+        return [
             DashboardOverview::class,
             ProdukListTable::class,
         ];
     }
 }
-

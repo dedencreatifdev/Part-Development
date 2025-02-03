@@ -6,6 +6,7 @@ use App\Models\Produk;
 use Filament\Support\Enums\ActionSize;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
@@ -22,6 +23,17 @@ class ProdukListTable extends BaseWidget
         return $table
             ->heading('Produk List')
             ->description('Daftar Harga Produk MITSUBISHI Budi Berlian Motor')
+            ->headerActions([
+                Action::make('lihat_semua')
+                    // ->badge()
+                    // ->badgeIconPosition()
+                    // ->badgeColor('primary')
+                    // ->badgeIcon('heroicon-o-clipboard-document-list')
+                    ->button()
+                    ->icon('heroicon-o-clipboard-document-list')
+                    ->url(route('filament.admin.resources.produks.index'))
+                    ->size(ActionSize::ExtraSmall),
+            ])
             ->query(
                 // ...
                 Produk::query()
@@ -65,12 +77,12 @@ class ProdukListTable extends BaseWidget
             ])
             ->contentGrid([
                 'default' => 2,
-                'md' => 5,
-                'lg' => 6,
-                'xl' => 7,
-                '2xl' => 8,
+                'md' => 4,
+                'lg' => 5,
+                'xl' => 6,
+                '2xl' => 7,
             ])
-            ->paginated([8,16, 32, 40, 50, 100, 'all'])
+            ->paginated([7, 14, 28, 32, 40, 50, 100, 'all'])
             ->actions([
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),
