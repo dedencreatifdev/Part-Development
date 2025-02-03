@@ -30,14 +30,14 @@
             <x-filament::icon
                 :alias="$iconAlias"
                 :icon="$icon"
-                class="fi-pagination-item-icon h-5 w-5 text-gray-400 transition duration-75 group-hover/button:text-gray-500 dark:text-gray-500 dark:group-hover/button:text-gray-400"
+                class="w-5 h-5 text-gray-400 transition duration-75 fi-pagination-item-icon group-hover/button:text-gray-500 dark:text-gray-500 dark:group-hover/button:text-gray-400"
             />
         @endif
 
         @if (filled($label))
             <span
                 @class([
-                    'fi-pagination-item-label px-1.5 text-sm font-semibold',
+                    'fi-pagination-item-label px-1 text-sm font-normal',
                     'text-gray-700 dark:text-gray-200' => ! ($disabled || $active),
                     'text-gray-500 dark:text-gray-400' => $disabled,
                     'text-primary-600 dark:text-primary-400' => $active,

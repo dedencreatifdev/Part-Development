@@ -68,7 +68,7 @@
             'fi-section',
             match ($aside) {
                 true => 'fi-aside grid grid-cols-1 items-start gap-x-6 gap-y-4 md:grid-cols-3',
-                false => 'rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
+                false => 'rounded-sm bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
             },
         ])
     }}
@@ -83,7 +83,7 @@
                 'cursor-pointer' => $collapsible,
                 match ($compact) {
                     true => 'px-4 py-2.5',
-                    false => 'px-6 py-4',
+                    false => 'px-4 py-2',
                 } => ! $aside,
             ])
         >
@@ -188,7 +188,7 @@
                 'fi-section-content',
                 match ($compact) {
                     true => 'p-4',
-                    false => 'p-6',
+                    false => 'p-4',
                 },
             ])
         >

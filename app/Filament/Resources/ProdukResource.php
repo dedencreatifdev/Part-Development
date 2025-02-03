@@ -14,6 +14,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
@@ -178,8 +179,7 @@ class ProdukResource extends Resource
                         ->default('-')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('SATUAN')
-                        ->size(TextColumn\TextColumnSize::ExtraSmall)
-                        ->searchable(),
+                        ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('HRG_JUAL')
                         ->prefix('Rp ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
@@ -235,25 +235,33 @@ class ProdukResource extends Resource
                     ->columnSpanFull()
                     ->size('50%')
                     ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
-                TextEntry::make('KDBR')
+                Section::make()
+                    ->description('Produk Detail')
+                    ->schema([
+                        // ...
+                        TextEntry::make('KDBR')
 
-                    ->label('Kode Barang'),
-                TextEntry::make('NAMA')
+                            ->label('Kode Barang'),
+                        TextEntry::make('NAMA')
 
-                    ->label('Nama Barang'),
-                TextEntry::make('KDGROUP')
+                            ->label('Nama Barang'),
+                        TextEntry::make('KDGROUP')
 
-                    ->label('Group'),
-                TextEntry::make('relLokasiRak.rak')
+                            ->label('Group'),
+                        TextEntry::make('relLokasiRak.rak')
 
-                    ->label('Lokasi'),
-                TextEntry::make('SATUAN')
+                            ->label('Lokasi'),
+                        TextEntry::make('SATUAN')
 
-                    ->label('Satuan'),
-                TextEntry::make('HRG_JUAL')
-                    ->prefix('Rp ')
-                    ->numeric(2)
-                    ->label('Harga'),
+                            ->label('Satuan'),
+                        TextEntry::make('HRG_JUAL')
+                            ->prefix('Rp ')
+                            ->numeric(2)
+                            ->label('Harga'),
+                    ]),
+                    Section::make()
+                    ->description('Produk Detail')
+                    ->schema([]),
             ])
             ->inlineLabel();
     }
