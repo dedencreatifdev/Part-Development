@@ -10,7 +10,8 @@ use Filament\Resources\Pages\ManageRecords;
 class ManageProduks extends ManageRecords
 {
     protected static string $resource = ProdukResource::class;
-
+    protected static ?string $label = 'Produk';
+    
     protected function getHeaderActions(): array
     {
         return [
@@ -21,7 +22,7 @@ class ManageProduks extends ManageRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            DashboardOverview::class
+            // DashboardOverview::class
         ];
     }
 }

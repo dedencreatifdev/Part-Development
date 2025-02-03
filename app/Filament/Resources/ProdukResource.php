@@ -36,6 +36,7 @@ class ProdukResource extends Resource
     protected static ?string $model = Produk::class;
 
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'Produk';
 
     public static function getEloquentQuery(): Builder
@@ -152,6 +153,7 @@ class ProdukResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+        ->description('Produk List')
             ->columns([
                 Stack::make([
                     // Columns
@@ -190,10 +192,11 @@ class ProdukResource extends Resource
             ])
             ->contentGrid([
                 'default' => 2,
+                'sm' => 3,
                 'md' => 4,
-                'lg' => 5,
-                'xl' => 6,
-                '2xl' => 7,
+                'lg' => 6,
+                'xl' => 7,
+                '2xl' => 8,
             ])
             // ->groups([
             //     'KDGROUP',
@@ -233,6 +236,7 @@ class ProdukResource extends Resource
         return $infolist
             ->schema([
                 ImageEntry::make('image')
+                ->label('')
                     ->columnSpanFull()
                     ->size('50%')
                     ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
@@ -259,13 +263,14 @@ class ProdukResource extends Resource
                             ->prefix('Rp ')
                             ->numeric(2)
                             ->label('Harga'),
-                    ]),
+                    ])
+                    ->columns(2),
                 Section::make()
-                    ->description('Produk Detail')
+                    ->description('Riawayat Produk')
                     ->schema([]),
             ])
             ->inlineLabel();
     }
 
-    
+
 }

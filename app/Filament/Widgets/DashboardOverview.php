@@ -21,16 +21,18 @@ class DashboardOverview extends BaseWidget
             Stat::make('Produk List', Produk::count())
                 ->description('Item')
                 ->descriptionIcon('heroicon-o-arrow-trending-up', IconPosition::Before)
+                ->icon('heroicon-m-clipboard-document-check')
+
                 ->url(route('filament.admin.resources.produks.index')),
-            Stat::make('Pesanan', '192.1k')
+            Stat::make('Pesanan', '-')
                 ->description('32k increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
-            Stat::make('Bounce rate', '21%')
+            Stat::make('Estimasi', '-')
                 ->description('7% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
                 ->color('danger'),
-            Stat::make('Bounce rate', '21%')
+            Stat::make('Booking Service', '21%')
                 ->description('7% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
                 ->color('danger'),
