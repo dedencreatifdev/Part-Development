@@ -8,7 +8,7 @@
 
 <div @if ($collapsible) x-on:click="toggleCollapseGroup(@js($title))" @endif
     {{ $attributes->class([
-        'fi-ta-group-header flex w-full items-center gap-x-6 bg-primary-600 px-6 py-2 dark:bg-white/5',
+        'fi-ta-group-header flex w-full items-center gap-x-2 bg-primary-600 px-6 py-2 dark:bg-white/5',
         'cursor-pointer' => $collapsible,
     ]) }}>
     {{ $start }}
