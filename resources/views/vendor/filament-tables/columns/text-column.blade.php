@@ -217,7 +217,7 @@
 
                                 <span
                                     @class([
-                                        'fi-ta-text-item-label',
+                                        'fi-ta-text-item-label ps-2 pe-2',
                                         'group-hover/item:underline group-focus-visible/item:underline' => $url,
                                         'whitespace-normal' => $canWrap,
                                         'line-clamp-[--line-clamp]' => $lineClamp,

@@ -13,6 +13,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\ActionSize;
 use Filament\Support\Enums\FontWeight;
@@ -221,5 +224,29 @@ class ProdukResource extends Resource
         return [
             'index' => Pages\ManageProduks::route('/'),
         ];
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                ImageEntry::make('avatar')
+                ->columnSpanFull()
+                    ->size('30%')
+                    ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
+                TextEntry::make('KDBR')
+                    ->label('Kode Barang')
+                    ->weight(FontWeight::Bold),
+                TextEntry::make('KDBR')
+                    ->label('Kode Barang')
+                    ->weight(FontWeight::Bold),
+                TextEntry::make('KDBR')
+                    ->label('Kode Barang')
+                    ->weight(FontWeight::Bold),
+                TextEntry::make('KDBR')
+                    ->label('Kode Barang')
+                    ->weight(FontWeight::Bold),
+            ])
+            ->inlineLabel();
     }
 }

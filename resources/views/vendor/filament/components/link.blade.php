@@ -49,7 +49,7 @@
     }
 
     $linkClasses = \Illuminate\Support\Arr::toCssClasses([
-        'fi-link group/link relative inline-flex items-center justify-center outline-none',
+        'pe-2 ps-2 mb-2 fi-link group/link relative inline-flex items-center justify-center outline-none',
         'pointer-events-none opacity-70' => $disabled,
         ($size instanceof ActionSize) ? "fi-size-{$size->value}" : null,
         // @deprecated `fi-link-size-*` has been replaced by `fi-size-*`.

@@ -91,6 +91,7 @@
                                     'max-w-none object-cover object-center',
                                     'rounded-full' => $isCircular,
                                     $ringClasses,
+                                    'mb-2'
                                 ])
                                 ->style([
                                     "height: {$height}" => $height,
