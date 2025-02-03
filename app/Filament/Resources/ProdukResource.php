@@ -24,6 +24,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextColumn\TextColumnSize;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -198,7 +199,7 @@ class ProdukResource extends Resource
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([27, 50, 100, 'all'])
+            ->paginated([28, 50, 100, 'all'])
 
             ->filters([
                 //
@@ -230,22 +231,29 @@ class ProdukResource extends Resource
     {
         return $infolist
             ->schema([
-                ImageEntry::make('avatar')
-                ->columnSpanFull()
-                    ->size('30%')
+                ImageEntry::make('image')
+                    ->columnSpanFull()
+                    ->size('50%')
                     ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
                 TextEntry::make('KDBR')
-                    ->label('Kode Barang')
-                    ->weight(FontWeight::Bold),
-                TextEntry::make('KDBR')
-                    ->label('Kode Barang')
-                    ->weight(FontWeight::Bold),
-                TextEntry::make('KDBR')
-                    ->label('Kode Barang')
-                    ->weight(FontWeight::Bold),
-                TextEntry::make('KDBR')
-                    ->label('Kode Barang')
-                    ->weight(FontWeight::Bold),
+
+                    ->label('Kode Barang'),
+                TextEntry::make('NAMA')
+
+                    ->label('Nama Barang'),
+                TextEntry::make('KDGROUP')
+
+                    ->label('Group'),
+                TextEntry::make('relLokasiRak.rak')
+
+                    ->label('Lokasi'),
+                TextEntry::make('SATUAN')
+
+                    ->label('Satuan'),
+                TextEntry::make('HRG_JUAL')
+                    ->prefix('Rp ')
+                    ->numeric(2)
+                    ->label('Harga'),
             ])
             ->inlineLabel();
     }
