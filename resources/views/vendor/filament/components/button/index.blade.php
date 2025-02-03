@@ -23,7 +23,7 @@
     'labelSrOnly' => false,
     'loadingIndicator' => true,
     'outlined' => false,
-    'size' => ActionSize::Medium,
+    'size' => ActionSize::ExtraSmall,
     'spaMode' => null,
     'tag' => 'button',
     'target' => null,

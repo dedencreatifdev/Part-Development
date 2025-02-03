@@ -124,9 +124,6 @@ class KendaraanResource extends Resource
                 Tables\Columns\TextColumn::make('no_mesin')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('tahun'),
-                Tables\Columns\TextColumn::make('ft_nmpemilik')
-                    ->wrap()
-                    ->searchable(),
             ])
             ->striped()
             ->paginated([20, 50, 100, 'all'])

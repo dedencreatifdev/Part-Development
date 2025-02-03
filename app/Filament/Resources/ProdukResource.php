@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProdukResource\Pages;
 use App\Filament\Resources\ProdukResource\RelationManagers;
+use App\Filament\Widgets\DashboardOverview;
 use App\Models\Produk;
 use Filament\Actions\Contracts\Groupable;
 use Filament\Forms;
@@ -259,10 +260,12 @@ class ProdukResource extends Resource
                             ->numeric(2)
                             ->label('Harga'),
                     ]),
-                    Section::make()
+                Section::make()
                     ->description('Produk Detail')
                     ->schema([]),
             ])
             ->inlineLabel();
     }
+
+    
 }

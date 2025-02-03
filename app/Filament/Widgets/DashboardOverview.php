@@ -13,7 +13,15 @@ class DashboardOverview extends BaseWidget
 
     protected ?string $description = 'An overview of some analytics.';
 
-    protected ?int $coloum = 6;
+    // protected int | string | array $columnSpan = [
+    //     'default' => 2,
+    //     'sm' => 2,
+    //     'md' => 3,
+    //     'xl' => 4,
+    //     '2xl' => 8,
+    // ];
+
+    // protected ?int $coloum = 6;
 
     protected function getStats(): array
     {

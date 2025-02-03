@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ProdukResource\Pages;
 
 use App\Filament\Resources\ProdukResource;
+use App\Filament\Widgets\DashboardOverview;
 use Filament\Actions;
 use Filament\Resources\Pages\ManageRecords;
 
@@ -14,6 +15,13 @@ class ManageProduks extends ManageRecords
     {
         return [
             // Actions\CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DashboardOverview::class
         ];
     }
 }

@@ -12,19 +12,19 @@
         @if ($breadcrumbs)
             <x-filament::breadcrumbs
                 :breadcrumbs="$breadcrumbs"
-                class="mb-2 hidden sm:block"
+                class="hidden mb-2 sm:block"
             />
         @endif
 
         <h1
-            class="fi-header-heading text-2xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-3xl"
+            class="text-xl font-bold tracking-tight fi-header-heading text-gray-950 dark:text-white sm:text-xl"
         >
             {{ $heading }}
         </h1>
 
         @if ($subheading)
             <p
-                class="fi-header-subheading mt-2 max-w-2xl text-lg text-gray-600 dark:text-gray-400"
+                class="max-w-2xl mt-2 text-lg text-gray-600 fi-header-subheading dark:text-gray-400"
             >
                 {{ $subheading }}
             </p>
