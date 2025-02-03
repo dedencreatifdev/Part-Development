@@ -82,7 +82,7 @@ class ProdukListTable extends BaseWidget
                 'xl' => 6,
                 '2xl' => 7,
             ])
-            ->paginated([7, 14, 28, 32, 40, 50, 100, 'all'])
+            ->paginated([14, 28, 32, 40, 50, 100, 'all'])
             ->actions([
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),
