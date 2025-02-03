@@ -21,7 +21,7 @@ class ProdukListTable extends BaseWidget
     {
         return $table
             ->heading('Produk List')
-            ->description('Daftar Harga List')
+            ->description('Daftar Harga Produk MITSUBISHI Budi Berlian Motor')
             ->query(
                 // ...
                 Produk::query()
@@ -70,7 +70,7 @@ class ProdukListTable extends BaseWidget
                 'xl' => 7,
                 '2xl' => 8,
             ])
-            ->paginated([24, 36, 40, 50, 100, 'all'])
+            ->paginated([16, 32, 40, 50, 100, 'all'])
             ->actions([
                 // Tables\Actions\EditAction::make(),
                 // Tables\Actions\DeleteAction::make(),

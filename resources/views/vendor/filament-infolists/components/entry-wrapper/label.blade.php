@@ -8,7 +8,7 @@
 >
     {{ $prefix }}
 
-    <span class="text-sm font-bold leading-6 text-gray-950 dark:text-white">
+    <span class="text-xs font-bold leading-6 text-gray-950 dark:text-white">
         {{ $slot }}
     </span>
 

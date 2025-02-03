@@ -153,7 +153,7 @@ class ProdukResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-        ->description('Produk List')
+            ->description('Daftar Harga Produk MITSUBISHI Budi Berlian Motor')
             ->columns([
                 Stack::make([
                     // Columns
@@ -203,7 +203,7 @@ class ProdukResource extends Resource
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([28, 50, 100, 'all'])
+            ->paginated([32, 50, 100, 'all'])
 
             ->filters([
                 //
@@ -236,7 +236,7 @@ class ProdukResource extends Resource
         return $infolist
             ->schema([
                 ImageEntry::make('image')
-                ->label('')
+                    ->label('')
                     ->columnSpanFull()
                     ->size('50%')
                     ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
@@ -245,21 +245,22 @@ class ProdukResource extends Resource
                     ->schema([
                         // ...
                         TextEntry::make('KDBR')
-
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Kode Barang'),
                         TextEntry::make('NAMA')
-
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Nama Barang'),
                         TextEntry::make('KDGROUP')
-
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Group'),
                         TextEntry::make('relLokasiRak.rak')
-
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Lokasi'),
                         TextEntry::make('SATUAN')
-
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Satuan'),
                         TextEntry::make('HRG_JUAL')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->prefix('Rp ')
                             ->numeric(2)
                             ->label('Harga'),
@@ -271,6 +272,4 @@ class ProdukResource extends Resource
             ])
             ->inlineLabel();
     }
-
-
 }

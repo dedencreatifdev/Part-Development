@@ -67,7 +67,7 @@
             $attributes
                 ->merge($getExtraAttributes(), escape: false)
                 ->class([
-                    'fi-in-image flex items-center gap-x-2.5',
+                    'fi-in-image flex items-center gap-x-2.5 py-3',
                     match ($alignment) {
                         Alignment::Start, Alignment::Left => 'justify-start',
                         Alignment::Center => 'justify-center',
