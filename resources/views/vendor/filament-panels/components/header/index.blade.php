@@ -17,14 +17,14 @@
         @endif
 
         <h1
-            class="text-xl font-bold tracking-tight fi-header-heading text-gray-950 dark:text-white sm:text-xl"
+            class="font-bold tracking-tight text-md fi-header-heading text-gray-950 dark:text-white sm:text-md"
         >
             {{ $heading }}
         </h1>
 
         @if ($subheading)
             <p
-                class="max-w-2xl mt-2 text-lg text-gray-600 fi-header-subheading dark:text-gray-400"
+                class="max-w-2xl mt-2 text-sm text-gray-600 fi-header-subheading dark:text-gray-400"
             >
                 {{ $subheading }}
             </p>

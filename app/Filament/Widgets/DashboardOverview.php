@@ -12,7 +12,7 @@ class DashboardOverview extends BaseWidget
 
     protected ?string $heading = 'Analytics';
     protected ?string $description = 'An overview of some analytics.';
-    protected static ?int $sort = 1;
+    protected static ?int $sort = 2;
 
     protected function getStats(): array
     {
