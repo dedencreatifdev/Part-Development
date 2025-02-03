@@ -413,7 +413,7 @@
                         x-sortable
                         :data-sortable-animation-duration="$getReorderAnimationDuration()"
                         @class([
-                            'fi-ta-content-grid gap-6 px-3 sm:px-3 dedens' => $contentGrid,
+                            'fi-ta-content-grid gap-3 px-3 sm:px-3 dedens' => $contentGrid,
                             'pt-0' => $contentGrid && $this->getTableGrouping(),
                             'gap-y-px bg-gray-200 dark:bg-white/5' => ! $contentGrid,
                         ])
