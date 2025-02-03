@@ -196,7 +196,7 @@ class ProdukResource extends Resource
             // ->groups([
             //     'KDGROUP',
             // ])
-            ->defaultGroup('FT_NMGROUP')
+            // ->defaultGroup('FT_NMGROUP')
 
             ->paginated([24, 50, 100, 'all'])
 
