@@ -203,7 +203,7 @@ class ProdukResource extends Resource
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([32, 50, 100, 'all'])
+            ->paginated([36, 50, 100, 'all'])
 
             ->filters([
                 //
