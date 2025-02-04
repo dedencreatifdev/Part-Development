@@ -44,4 +44,5 @@ class HomePages extends Page
             ProdukListTable::class,
         ];
     }
+    
 }

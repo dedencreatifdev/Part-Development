@@ -193,10 +193,10 @@ class ProdukResource extends Resource
             ->contentGrid([
                 'default' => 2,
                 'sm' => 3,
-                'md' => 4,
-                'lg' => 6,
-                'xl' => 7,
-                '2xl' => 8,
+                'md' => 3,
+                'lg' => 4,
+                'xl' => 5,
+                '2xl' => 6,
             ])
             // ->groups([
             //     'KDGROUP',

@@ -82,7 +82,7 @@ class ProdukListTable extends BaseWidget
                 'xl' => 6,
                 '2xl' => 6,
             ])
-            ->paginated([12,24, 36, 40, 50, 100, 'all'])
+            ->paginated([12, 24, 36, 40, 50, 100, 'all'])
             // ->paginated(false)
             ->actions([
                 // Tables\Actions\EditAction::make(),
@@ -93,5 +93,47 @@ class ProdukListTable extends BaseWidget
                     ->icon('heroicon-o-clipboard-document-list')
                     ->color('primary'),
             ]);
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                ImageEntry::make('image')
+                    ->label('')
+                    ->columnSpanFull()
+                    ->size('50%')
+                    ->defaultImageUrl(url('https://budiberlianmotor.co.id/wp-content/uploads/logo-wa-scaled.jpg')),
+                Section::make()
+                    ->description('Produk Detail')
+                    ->schema([
+                        // ...
+                        TextEntry::make('KDBR')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Kode Barang'),
+                        TextEntry::make('NAMA')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Nama Barang'),
+                        TextEntry::make('KDGROUP')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Group'),
+                        TextEntry::make('relLokasiRak.rak')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Lokasi'),
+                        TextEntry::make('SATUAN')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Satuan'),
+                        TextEntry::make('HRG_JUAL')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->prefix('Rp ')
+                            ->numeric(2)
+                            ->label('Harga'),
+                    ])
+                    ->columns(2),
+                Section::make()
+                    ->description('Riawayat Produk')
+                    ->schema([]),
+            ])
+            ->inlineLabel();
     }
 }
