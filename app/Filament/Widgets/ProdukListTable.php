@@ -169,18 +169,21 @@ class ProdukListTable extends BaseWidget
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
 
-                        ->searchable(),
+                    ->searchable()
+                    ,
                     TextColumn::make('NAMA')
                         ->label('Nama Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
 
                         ->limit(15)
-                        ->searchable(),
+                    ->searchable()
+                    ,
                     TextColumn::make('KDGROUP')
                         ->badge()
                         ->label('Grup')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
-                        ->searchable(),
+                    // ->searchable()
+                    ,
                     TextColumn::make('relLokasiRak.rak')
                         ->prefix('Lokasi : ')
                         ->suffix('(Tuba)')

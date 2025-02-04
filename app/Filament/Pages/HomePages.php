@@ -19,10 +19,13 @@ class HomePages extends Page
 
     protected static ?string $slug = '/';
 
-    // public static function canAccess(): bool
-    // {
-    // return Auth()->user()->canManageSettings();
-    // }
+
+
+
+    public static function canAccess(): bool
+    {
+        return true; //Auth()->user()->canManageSettings();
+    }
 
     //     public function getFooter(): ?View
     // {
@@ -44,5 +47,4 @@ class HomePages extends Page
             ProdukListTable::class,
         ];
     }
-
 }

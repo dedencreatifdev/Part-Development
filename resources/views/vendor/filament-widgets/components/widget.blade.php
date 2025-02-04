@@ -23,6 +23,7 @@
     :lg="$columnSpan['lg'] ?? null"
     :xl="$columnSpan['xl'] ?? null"
     :twoXl="$columnSpan['2xl'] ?? null"
+    
     :defaultStart="$columnStart['default'] ?? null"
     :smStart="$columnStart['sm'] ?? null"
     :mdStart="$columnStart['md'] ?? null"

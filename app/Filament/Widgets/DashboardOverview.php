@@ -14,6 +14,13 @@ class DashboardOverview extends BaseWidget
     // protected ?string $description = 'An overview of some analytics.';
     protected static ?int $sort = 2;
 
+    // protected int | string | array $columnSpan = [
+    //     'default'=>2,
+    //     'sm' => 3,
+    //     'md' => 4,
+    //     'xl' => 6,
+    // ];
+
     public function getWidgetData(): array
     {
         return [
@@ -51,10 +58,4 @@ class DashboardOverview extends BaseWidget
         ];
     }
 
-    // public function getHeaderWidgetsColumns(): int | array
-    // {
-    //     return [
-    //         'default' => 2
-    //     ];
-    // }
 }
