@@ -32,7 +32,7 @@ class HomePages extends Page
     protected function getHeaderWidgets(): array
     {
         return [
-            // DashboardOverview::class,
+            DashboardOverview::class,
             // ProdukListTable::class,
         ];
     }
@@ -40,9 +40,9 @@ class HomePages extends Page
     protected function getFooterWidgets(): array
     {
         return [
-            DashboardOverview::class,
+            // DashboardOverview::class,
             ProdukListTable::class,
         ];
     }
-    
+
 }
