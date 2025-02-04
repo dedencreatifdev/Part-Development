@@ -43,19 +43,19 @@
             @if ($icon = $getIcon())
                 <x-filament::icon
                     :icon="$icon"
-                    class="fi-wi-stats-overview-stat-icon h-5 w-5 text-gray-400 dark:text-gray-500"
+                    class="w-10 h-10 text-gray-400 fi-wi-stats-overview-stat-icon dark:text-gray-500"
                 />
             @endif
 
             <span
-                class="fi-wi-stats-overview-stat-label text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="text-sm text-gray-500 font-xl fi-wi-stats-overview-stat-label dark:text-gray-400 "
             >
                 {{ $getLabel() }}
             </span>
         </div>
 
         <div
-            class="fi-wi-stats-overview-stat-value text-3xl font-semibold tracking-tight text-gray-950 dark:text-white"
+            class="text-3xl font-semibold tracking-tight fi-wi-stats-overview-stat-value text-gray-950 dark:text-white"
         >
             {{ $getValue() }}
         </div>

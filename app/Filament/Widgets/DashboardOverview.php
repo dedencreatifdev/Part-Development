@@ -10,9 +10,18 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 class DashboardOverview extends BaseWidget
 {
 
-    protected ?string $heading = 'Analytics';
-    protected ?string $description = 'An overview of some analytics.';
+    // protected ?string $heading = 'Analytics';
+    // protected ?string $description = 'An overview of some analytics.';
     protected static ?int $sort = 2;
+
+    public function getWidgetData(): array
+    {
+        return [
+            'stats' => [
+                'total' => 100,
+            ],
+        ];
+    }
 
     protected function getStats(): array
     {
@@ -37,15 +46,15 @@ class DashboardOverview extends BaseWidget
             Stat::make('Booking Service', '21%')
                 ->description('7% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
-                ->color('danger'),
+            //     ->color('danger'),
 
         ];
     }
 
-    public function getHeaderWidgetsColumns(): int | array
-    {
-        return [
-            'default' => 2
-        ];
-    }
+    // public function getHeaderWidgetsColumns(): int | array
+    // {
+    //     return [
+    //         'default' => 2
+    //     ];
+    // }
 }

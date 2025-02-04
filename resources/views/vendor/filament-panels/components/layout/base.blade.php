@@ -58,37 +58,12 @@
         {{ filament()->getTheme()->getHtml() }}
         {{ filament()->getFontHtml() }}
 
-        <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <style>
-            /* CSS Code */
-            .swiper-wrapper {
-            width: 100%;
-            height: max-content !important;
-            padding-bottom: 64px !important;
-            -webkit-transition-timing-function: linear !important;
-            transition-timing-function: linear !important;
-            position: relative;
-            }
-            .swiper-pagination-bullet {
-            background: #4f46e5;
-            }
-        </style>
-        <!--JAVASCRIPT CODE-->
-        <script>
-            var swiper = new Swiper(".default-carousel", {
-            loop: true,
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            },
-            navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-            },
-            });
-        </script>
+        {{--  --}}
 
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        {{--  --}}
         <style>
             :root {
                 --font-family: '{!! filament()->getFontFamily() !!}';

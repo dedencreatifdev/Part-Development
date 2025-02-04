@@ -12,7 +12,7 @@ class HomePages extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
     protected static ?string $navigationLabel = 'Dashboard';
-    protected static ?string $title = 'Custom Page Title';
+    protected static ?string $title = 'Dashboard';
     protected ?string $subheading = 'Custom Page Subheading';
 
     protected static string $view = 'filament.pages.home-pages';
@@ -32,7 +32,7 @@ class HomePages extends Page
     protected function getHeaderWidgets(): array
     {
         return [
-            DashboardOverview::class,
+            // DashboardOverview::class,
             // ProdukListTable::class,
         ];
     }
@@ -40,7 +40,7 @@ class HomePages extends Page
     protected function getFooterWidgets(): array
     {
         return [
-            // DashboardOverview::class,
+            DashboardOverview::class,
             ProdukListTable::class,
         ];
     }
