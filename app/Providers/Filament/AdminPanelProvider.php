@@ -90,16 +90,16 @@ class AdminPanelProvider extends PanelProvider
             ->navigationGroups([
                 NavigationGroup::make()
                     ->label('Produk')
-                    // ->icon('heroicon-o-squares-2x2')
-                    ,
+                // ->icon('heroicon-o-squares-2x2')
+                ,
                 NavigationGroup::make()
                     ->label('Kendaraan')
                     // ->icon('heroicon-o-cog-6-tooth')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Settings')
-                    // ->icon('heroicon-o-cog-8-tooth')
-                    ,
+                // ->icon('heroicon-o-cog-8-tooth')
+                ,
             ]);
     }
 }
