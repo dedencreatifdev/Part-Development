@@ -89,17 +89,13 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('Produk')
-                // ->icon('heroicon-o-squares-2x2')
-                ,
+                    ->label('Produk'),
                 NavigationGroup::make()
                     ->label('Kendaraan')
-                    // ->icon('heroicon-o-cog-6-tooth')
+
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label('Settings')
-                // ->icon('heroicon-o-cog-8-tooth')
-                ,
+                    ->label('Settings'),
             ]);
     }
 }
