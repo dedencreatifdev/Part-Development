@@ -11,7 +11,7 @@ class ManageProduks extends ManageRecords
 {
     protected static string $resource = ProdukResource::class;
     protected static ?string $label = 'Produk';
-    
+
     protected function getHeaderActions(): array
     {
         return [
@@ -24,5 +24,10 @@ class ManageProduks extends ManageRecords
         return [
             // DashboardOverview::class
         ];
+    }
+
+    protected function getShieldRedirectPath(): string
+    {
+        return '/'; // redirect to the root index...
     }
 }

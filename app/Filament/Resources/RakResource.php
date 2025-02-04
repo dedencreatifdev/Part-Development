@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class RakResource extends Resource
 {
     protected static ?string $model = Rak::class;
-    use HasPageShield;
+    // use HasPageShield;
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Produk';
 

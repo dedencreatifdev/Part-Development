@@ -35,7 +35,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
-    use HasPageShield;
+    // use HasPageShield;
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'Produk';

@@ -25,7 +25,7 @@ class KendaraanResource extends Resource
 
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Settings';
-    use HasPageShield;
+    // use HasPageShield;
 
     public static function form(Form $form): Form
     {
