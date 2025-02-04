@@ -95,7 +95,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Setting')
                     ->icon('heroicon-o-cog-8-tooth'),
                 NavigationGroup::make()
-                    ->label(fn(): string => __('navigation.settings'))
+                    ->label('Kendaraan')
                     ->icon('heroicon-o-cog-6-tooth')
                     ->collapsed(),
             ]);

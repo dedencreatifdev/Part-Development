@@ -24,7 +24,7 @@ class KendaraanResource extends Resource
     protected static ?string $model = Kendaraan::class;
 
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Settings';
+    protected static ?string $navigationGroup = 'Kendaraan';
     // use HasPageShield;
 
     public static function form(Form $form): Form
