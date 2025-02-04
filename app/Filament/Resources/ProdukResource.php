@@ -273,4 +273,8 @@ class ProdukResource extends Resource
             ])
             ->inlineLabel();
     }
+
+    protected function getShieldRedirectPath(): string {
+        return '/'; // redirect to the root index...
+    }
 }
