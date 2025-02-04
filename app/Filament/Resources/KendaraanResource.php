@@ -23,7 +23,7 @@ class KendaraanResource extends Resource
 {
     protected static ?string $model = Kendaraan::class;
 
-    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-truck';
     protected static ?string $navigationGroup = 'Kendaraan';
     // use HasPageShield;
 
