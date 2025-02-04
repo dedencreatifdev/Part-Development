@@ -92,7 +92,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Produk')
                     ->icon('heroicon-o-squares-2x2'),
                 NavigationGroup::make()
-                    ->label('Settings')
+                    ->label('Setting')
                     ->icon('heroicon-o-cog-8-tooth'),
                 NavigationGroup::make()
                     ->label(fn(): string => __('navigation.settings'))
