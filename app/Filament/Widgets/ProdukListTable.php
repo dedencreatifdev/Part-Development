@@ -3,6 +3,8 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Produk;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
@@ -29,6 +31,8 @@ class ProdukListTable extends BaseWidget
 {
     protected int | string | array $columnSpan = 'full';
     protected static ?int $sort = 3;
+    // use HasPageShield;
+    use HasWidgetShield;
 
     // use InteractsWithForms, InteractsWithViews, InteractsWithTable;
 

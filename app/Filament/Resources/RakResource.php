@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\RakResource\Pages;
 use App\Filament\Resources\RakResource\RelationManagers;
 use App\Models\Rak;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class RakResource extends Resource
 {
     protected static ?string $model = Rak::class;
-
+    use HasPageShield;
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Produk';
 

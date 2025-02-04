@@ -4,12 +4,14 @@ namespace App\Filament\Pages;
 
 use App\Filament\Widgets\DashboardOverview;
 use App\Filament\Widgets\ProdukListTable;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Pages\Page;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
 class HomePages extends Page
 {
+    // use HasPageShield;
     protected static ?string $navigationIcon = 'heroicon-o-home';
     protected static ?string $navigationLabel = 'Dashboard';
     protected static ?string $title = 'Dashboard';
@@ -19,13 +21,6 @@ class HomePages extends Page
 
     protected static ?string $slug = '/';
 
-
-
-
-    public static function canAccess(): bool
-    {
-        return true; //Auth()->user()->canManageSettings();
-    }
 
     //     public function getFooter(): ?View
     // {

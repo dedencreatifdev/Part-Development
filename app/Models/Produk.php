@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Produk extends Model
 {
+
     //price_list
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;

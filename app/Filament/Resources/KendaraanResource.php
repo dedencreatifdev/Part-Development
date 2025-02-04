@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\KendaraanResource\Pages;
 use App\Filament\Resources\KendaraanResource\RelationManagers;
 use App\Models\Kendaraan;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Textarea;
@@ -24,6 +25,7 @@ class KendaraanResource extends Resource
 
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Settings';
+    use HasPageShield;
 
     public static function form(Form $form): Form
     {

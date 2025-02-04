@@ -3,6 +3,8 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Produk;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Support\Enums\IconPosition;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -13,6 +15,8 @@ class DashboardOverview extends BaseWidget
     // protected ?string $heading = 'Analytics';
     // protected ?string $description = 'An overview of some analytics.';
     protected static ?int $sort = 2;
+    // use HasPageShield;
+    use HasWidgetShield;
 
     // protected int | string | array $columnSpan = [
     //     'default'=>2,

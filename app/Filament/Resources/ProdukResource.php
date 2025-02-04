@@ -6,6 +6,7 @@ use App\Filament\Resources\ProdukResource\Pages;
 use App\Filament\Resources\ProdukResource\RelationManagers;
 use App\Filament\Widgets\DashboardOverview;
 use App\Models\Produk;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Actions\Contracts\Groupable;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
@@ -34,7 +35,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
-
+    use HasPageShield;
     // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationGroup = 'Produk';
