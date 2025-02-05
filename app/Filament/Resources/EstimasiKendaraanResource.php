@@ -27,7 +27,7 @@ class EstimasiKendaraanResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Estimasi';
     protected static ?string $navigationGroup = 'Estimasi';
-    
+
 
     public static function form(Form $form): Form
     {
@@ -53,7 +53,7 @@ class EstimasiKendaraanResource extends Resource
                     // Columns
                     ImageColumn::make('image')
                         ->size('100%'),
-                    TextColumn::make('kode_jenis')
+                    TextColumn::make('relKendaraan.no_polisi')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->searchable(),
