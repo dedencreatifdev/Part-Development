@@ -24,8 +24,8 @@ class EstimasiKendaraanResource extends Resource
 {
     protected static ?string $model = EstimasiKendaraan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack'; //Estimasi
+    protected static ?string $navigationGroup = 'Estimasi';
     public static function form(Form $form): Form
     {
         return $form

@@ -95,6 +95,8 @@ class AdminPanelProvider extends PanelProvider
 
                     ->collapsed(),
                 NavigationGroup::make()
+                    ->label('Estimasi'),
+                NavigationGroup::make()
                     ->label('Settings'),
             ]);
     }
