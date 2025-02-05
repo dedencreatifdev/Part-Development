@@ -18,6 +18,7 @@ class PesananResource extends Resource
     protected static ?string $model = Pesanan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Pesanan';
 
     public static function form(Form $form): Form
     {
@@ -49,7 +50,7 @@ class PesananResource extends Resource
     {
         return $table
             ->columns([
-                
+
                 Tables\Columns\TextColumn::make('pelanggan_id')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('tanggal_ambil')
