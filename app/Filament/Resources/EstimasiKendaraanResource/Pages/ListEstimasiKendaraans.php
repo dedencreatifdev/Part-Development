@@ -9,8 +9,6 @@ use Filament\Resources\Pages\ListRecords;
 class ListEstimasiKendaraans extends ListRecords
 {
     protected static string $resource = EstimasiKendaraanResource::class;
-    protected static ?string $title = 'Finance dashboard';
-    protected static string $routePath = 'finance';
 
     protected function getHeaderActions(): array
     {
