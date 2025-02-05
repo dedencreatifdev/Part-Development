@@ -6,6 +6,7 @@ use App\Filament\Widgets\DashboardOverview;
 use App\Filament\Widgets\ProdukListTable;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Pages\Page;
+use Filament\Widgets\AccountWidget;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +32,7 @@ class HomePages extends Page
     {
         return [
             // DashboardOverview::class,
+            AccountWidget::class,
             // ProdukListTable::class,
         ];
     }

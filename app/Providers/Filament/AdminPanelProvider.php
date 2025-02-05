@@ -8,6 +8,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
 use Filament\Panel;
@@ -31,6 +32,16 @@ class AdminPanelProvider extends PanelProvider
             ->path('')
             ->login()
             ->registration()
+            ->profile(isSimple: false)
+            ->loginRouteSlug('login')
+            ->registrationRouteSlug('register')
+            ->passwordResetRoutePrefix('password-reset')
+            ->passwordResetRequestRouteSlug('request')
+            ->passwordResetRouteSlug('reset')
+            ->emailVerificationRoutePrefix('email-verification')
+            ->emailVerificationPromptRouteSlug('prompt')
+            ->emailVerificationRouteSlug('verify')
+
             ->colors([
                 'primary' => Color::Rose,
                 'gray' => Color::Gray,
@@ -47,7 +58,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                // Widgets\AccountWidget::class,
+                Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
@@ -98,6 +109,10 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Estimasi'),
                 NavigationGroup::make()
                     ->label('Settings'),
+            ])
+            ->userMenuItems([
+                'profile' => MenuItem::make()->label('Edit profile'),
+                // ...
             ]);
     }
 }
