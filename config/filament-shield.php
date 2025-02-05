@@ -3,7 +3,7 @@
 return [
     'shield_resource' => [
         'should_register_navigation' => true,
-        'slug' => 'shield/roles',
+        'slug' => 'admin/roles',
         'navigation_sort' => -1,
         'navigation_badge' => true,
         'navigation_group' => true,
@@ -21,7 +21,7 @@ return [
 
     'super_admin' => [
         'enabled' => false,
-        'name' => 'super_admin',
+        'name' => 'admin',
         'define_via_gate' => false,
         'intercept_gate' => 'before', // after
     ],
@@ -45,6 +45,7 @@ return [
             'delete_any',
             'force_delete',
             'force_delete_any',
+            'import',
         ],
 
         'page' => 'page',
