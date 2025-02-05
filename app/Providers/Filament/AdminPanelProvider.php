@@ -102,9 +102,9 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Produk'),
                 NavigationGroup::make()
-                    ->label('Kendaraan')
-
-                    ->collapsed(),
+                    ->label('Transaksi'),
+                NavigationGroup::make()
+                    ->label('Kendaraan'),
                 NavigationGroup::make()
                     ->label('Estimasi'),
                 NavigationGroup::make()
