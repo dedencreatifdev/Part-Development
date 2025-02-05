@@ -37,7 +37,7 @@ class ProdukResource extends Resource
     protected static ?string $model = Produk::class;
     // use HasPageShield;
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
-
+    protected static ?string $label = 'Produk List';
     protected static ?string $navigationGroup = 'Produk';
 
     public static function getEloquentQuery(): Builder

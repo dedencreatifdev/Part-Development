@@ -10,7 +10,7 @@ use Filament\Resources\Pages\ManageRecords;
 class ManageProduks extends ManageRecords
 {
     protected static string $resource = ProdukResource::class;
-    protected static ?string $label = 'Produk';
+    protected static ?string $label = 'Produk List';
 
     protected function getHeaderActions(): array
     {
