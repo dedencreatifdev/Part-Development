@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\HomePages;
+use App\Filament\Pages\Profile;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -111,8 +112,15 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Settings'),
             ])
             ->userMenuItems([
-                'profile' => MenuItem::make()->label('Edit profile'),
+                MenuItem::make()
+                    // ->label('Profile')
+                    // ->url(fn (): string => Profile::getUrl())
+                    // ->icon('heroicon-o-user'),
+            ])
+            // ->userMenuItems([
+                // 'profile' => MenuItem::make()->label('Edit profile'),
                 // ...
-            ]);
+            // ])
+            ;
     }
 }
