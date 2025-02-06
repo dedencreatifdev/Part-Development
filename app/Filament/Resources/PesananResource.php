@@ -17,8 +17,10 @@ class PesananResource extends Resource
 {
     protected static ?string $model = Pesanan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Pesanan';
+    protected static ?string $navigationIcon = 'heroicon-o-envelope';
+    protected static ?string $navigationLabel = 'Pesanan Sparepart';
+    protected static ?string $navigationGroup = 'Sparepart';
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -111,4 +113,6 @@ class PesananResource extends Resource
             'edit' => Pages\EditPesanan::route('/{record}/edit'),
         ];
     }
+
+
 }

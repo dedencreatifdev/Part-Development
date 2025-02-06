@@ -101,26 +101,24 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('Produk'),
+                    ->label('Sparepart'),
                 NavigationGroup::make()
-                    ->label('Transaksi'),
+                    ->label('Service'),
                 NavigationGroup::make()
-                    ->label('Kendaraan'),
-                NavigationGroup::make()
-                    ->label('Estimasi'),
+                    ->label('Master Data'),
                 NavigationGroup::make()
                     ->label('Settings'),
             ])
             ->userMenuItems([
                 MenuItem::make()
-                    // ->label('Profile')
-                    // ->url(fn (): string => Profile::getUrl())
-                    // ->icon('heroicon-o-user'),
+                // ->label('Profile')
+                // ->url(fn (): string => Profile::getUrl())
+                // ->icon('heroicon-o-user'),
             ])
             // ->userMenuItems([
-                // 'profile' => MenuItem::make()->label('Edit profile'),
-                // ...
+            // 'profile' => MenuItem::make()->label('Edit profile'),
+            // ...
             // ])
-            ;
+        ;
     }
 }

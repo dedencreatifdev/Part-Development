@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EstimasiKendaraanResource\Pages;
 use App\Filament\Resources\EstimasiKendaraanResource\RelationManagers;
+use App\Filament\Widgets\ProdukListTable;
 use App\Models\EstimasiKendaraan;
 use App\Models\Kendaraan;
 use Filament\Forms;
@@ -30,8 +31,10 @@ class EstimasiKendaraanResource extends Resource
 {
     protected static ?string $model = EstimasiKendaraan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Estimasi';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
+    protected static ?string $navigationLabel = 'Estimasi';
+    protected static ?string $navigationGroup = 'Sparepart';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -120,8 +123,10 @@ class EstimasiKendaraanResource extends Resource
                             // ->size('40%')
                             ->label(''),
                     ])->grow(false),
+
                     Section::make([
-                        TextEntry::make('relKendaraan.kendaraan')
+                        TextEntry::make('relKendaraan.kendaraan'),
+
                     ]),
                 ])->from('md')
             ])->columns(1);

@@ -14,6 +14,13 @@ class ListPesanans extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            Actions\Action::make('import_pesanan')
+            ->hidden()
+            ,
         ];
+    }
+
+    protected function getShieldRedirectPath(): string {
+        return '/'; // redirect to the root index...
     }
 }
