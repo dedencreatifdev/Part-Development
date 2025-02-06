@@ -107,7 +107,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Master Data'),
                 NavigationGroup::make()
-                    ->label('Settings'),
+                    ->label(__('Settings')),
             ])
             ->userMenuItems([
                 MenuItem::make()
