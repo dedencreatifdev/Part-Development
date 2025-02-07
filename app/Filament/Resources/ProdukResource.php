@@ -28,6 +28,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\TextColumn\TextColumnSize;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -193,7 +194,7 @@ class ProdukResource extends Resource
                 ]),
             ])
             ->contentGrid([
-                'default' => 2,
+                'default' => 4,
                 'sm' => 3,
                 'md' => 3,
                 'lg' => 4,
@@ -208,7 +209,13 @@ class ProdukResource extends Resource
             ->paginated([36, 50, 100, 'all'])
 
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->multiple()
+                    ->options([
+                        'draft' => 'Draft',
+                        'reviewing' => 'Reviewing',
+                        'published' => 'Published',
+                    ])
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
@@ -275,7 +282,8 @@ class ProdukResource extends Resource
             ->inlineLabel();
     }
 
-    protected function getShieldRedirectPath(): string {
+    protected function getShieldRedirectPath(): string
+    {
         return '/'; // redirect to the root index...
     }
 }
