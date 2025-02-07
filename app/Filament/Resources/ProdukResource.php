@@ -194,7 +194,7 @@ class ProdukResource extends Resource
                 ]),
             ])
             ->contentGrid([
-                'default' => 6,
+                'default' => 5,
                 'sm' => 3,
                 'md' => 3,
                 'lg' => 4,
