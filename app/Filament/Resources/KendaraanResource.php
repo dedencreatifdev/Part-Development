@@ -15,6 +15,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -130,9 +132,21 @@ class KendaraanResource extends Resource
             ])
             ->striped()
             ->paginated([20, 50, 100, 'all'])
+
             ->filters([
-                //
-            ])
+                SelectFilter::make('kdjns')
+                    // ->relationship('author', 'name')
+                    ->options(Kendaraan::pluck('kdjns', 'kdjns'))
+                    ->searchable()
+                    ->preload(),
+                SelectFilter::make('kendaraan')
+                    // ->relationship('author', 'name')
+                    ->options(Kendaraan::pluck('kendaraan', 'kendaraan'))
+                    ->searchable()
+                    ->preload(),
+            ], layout: FiltersLayout::AboveContent)->filtersFormColumns(4)
+
+
             ->actions([
                 ActionGroup::make([
                     Tables\Actions\ViewAction::make()

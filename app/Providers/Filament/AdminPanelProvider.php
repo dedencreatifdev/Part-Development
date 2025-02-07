@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\HomePages;
 use App\Filament\Pages\Profile;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use Cmsmaxinc\FilamentErrorPages\FilamentErrorPagesPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -91,6 +92,7 @@ class AdminPanelProvider extends PanelProvider
                         'default' => 1,
                         'sm' => 2,
                     ]),
+                FilamentErrorPagesPlugin::make(),
             ])
             ->authMiddleware([
                 Authenticate::class,
