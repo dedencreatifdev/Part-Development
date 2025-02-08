@@ -50,7 +50,7 @@ class EstimasiResource extends Resource
                     ]),
                     Section::make([])->grow(false),
                 ])->from('md')
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
