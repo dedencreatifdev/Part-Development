@@ -4,11 +4,17 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PesananResource\Pages;
 use App\Filament\Resources\PesananResource\RelationManagers;
+use App\Models\Pelanggan;
 use App\Models\Pesanan;
 use Filament\Forms;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -26,26 +32,37 @@ class PesananResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('pelanggan_id')
-                    ->required()
-                    ->maxLength(100),
-                Forms\Components\DateTimePicker::make('tanggal_ambil')
+                // Section::make()
+                //     ->relationship('relPelanggan')
+                //     ->schema([
+                //         TextInput::make('alamat')
+                //             ->disabled()
+                //             ->maxLength(100),
+
+                //     ]),
+                Select::make('pelanggan_id')
+                    ->label('Pelanggan')
+                    ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
+                    ->searchable(),
+                DateTimePicker::make('tanggal_ambil')
                     ->required(),
-                Forms\Components\TextInput::make('nama_pengambil')
+                TextInput::make('nama_pengambil')
                     ->required()
                     ->maxLength(100),
-                Forms\Components\DateTimePicker::make('tanggal_datang')
+                DateTimePicker::make('tanggal_datang')
                     ->required(),
-                Forms\Components\TextInput::make('supplier_id')
+                TextInput::make('supplier_id')
                     ->required()
                     ->maxLength(100),
-                Forms\Components\TextInput::make('lampiran')
+                TextInput::make('lampiran')
                     ->required()
                     ->maxLength(200),
-                Forms\Components\TextInput::make('uang_muka')
+                TextInput::make('uang_muka')
                     ->required()
                     ->numeric(),
-            ]);
+            ])
+            ->columns(3)
+            ->inlineLabel();
     }
 
     public static function table(Table $table): Table
@@ -53,32 +70,33 @@ class PesananResource extends Resource
         return $table
             ->columns([
 
-                Tables\Columns\TextColumn::make('pelanggan_id')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('tanggal_ambil')
+                TextColumn::make('created_at')
+                ->label('Tgl Pesan')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('nama_pengambil')
+                TextColumn::make('relPelanggan.nama_customer')
+                    ->label('Nama Cusromer')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('tanggal_datang')
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('supplier_id')
+                TextColumn::make('relPelanggan.alamat')
+                    ->label('Alamat')
+                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    ->wrap()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('lampiran')
+                TextColumn::make('relPelanggan.no_telp')
+                    ->label('No Polisi')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('uang_muka')
+                TextColumn::make('supplier_id')
+                    ->searchable(),
+                TextColumn::make('lampiran')
+                    ->searchable(),
+                TextColumn::make('uang_muka')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
+                TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -113,6 +131,4 @@ class PesananResource extends Resource
             'edit' => Pages\EditPesanan::route('/{record}/edit'),
         ];
     }
-
-
 }
