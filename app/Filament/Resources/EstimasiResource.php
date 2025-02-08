@@ -41,6 +41,7 @@ class EstimasiResource extends Resource
             ->columns([
                 Stack::make([
                     Tables\Columns\ImageColumn::make('image')
+                    ->defaultImageUrl(fn()=>url('storage/app/public/01JKJB4N8P659GMTBVADKSA3B2.jpg'))
                         ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
                     ->size(TextColumnSize::ExtraSmall)
