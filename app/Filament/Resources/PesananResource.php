@@ -47,6 +47,12 @@ class PesananResource extends Resource
                                 Textarea::make('alamat')
                                     ->required(),
                             ])
+                            ->editOptionForm([
+                                TextInput::make('nama_customer')
+                                    ->required(),
+                                Textarea::make('alamat')
+                                    ->required(),
+                            ])
                             ->required()
                             ->preload()
                             ->searchable(),
