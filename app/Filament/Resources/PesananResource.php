@@ -41,6 +41,9 @@ class PesananResource extends Resource
                             ->label('Pelanggan')
                             // ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
                             ->relationship('relPelanggan', 'nama_customer')
+                            ->searchable(['nama_customer', 'no_polisi', 'no_telp'])
+                            ->searchPrompt('Search Nama Customer by Nama Customer No Polisi dan No Telpon')
+                            ->searchingMessage('Searching authors...')
                             ->createOptionForm([
                                 TextInput::make('nama_customer')
                                     ->required(),
