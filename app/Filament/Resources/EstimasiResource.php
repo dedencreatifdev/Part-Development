@@ -6,6 +6,10 @@ use App\Filament\Resources\EstimasiResource\Pages;
 use App\Filament\Resources\EstimasiResource\RelationManagers;
 use App\Models\Estimasi;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Split;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
@@ -28,17 +32,24 @@ class EstimasiResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('nama_estimasi')
-                    ->required()
-                    ->maxLength(100),
-                Forms\Components\FileUpload::make('image')
-                    ->imageEditor()
-                    ->imageEditorAspectRatios([
-                        null,
-                        '1:1',
-                    ])
-                    ->image()
-                    ->required(),
+
+
+                Split::make([
+                    Section::make([
+                        TextInput::make('nama_estimasi')
+                            ->required()
+                            ->maxLength(100),
+                        FileUpload::make('image')
+                            ->imageEditor()
+                            ->imageEditorAspectRatios([
+                                null,
+                                '1:1',
+                            ])
+                            ->image()
+                            ->required(),
+                    ]),
+                    Section::make([])->grow(false),
+                ])->from('md')
             ]);
     }
 
