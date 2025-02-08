@@ -41,6 +41,7 @@ class EstimasiResource extends Resource
             ->columns([
                 Stack::make([
                     Tables\Columns\ImageColumn::make('image')
+                        ->acceptedFileTypes(['storage'])
                         // ->defaultImageUrl(fn(Estimasi $record) => url('storage/app/public') . '/' . $record->image)
                         ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
