@@ -173,15 +173,15 @@ class ProdukListTable extends BaseWidget
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
 
-                    ->searchable()
-                    ,
+                        // ->searchable()
+                        ,
                     TextColumn::make('NAMA')
                         ->label('Nama Barang')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
 
                         ->limit(15)
-                    ->searchable()
-                    ,
+                        // ->searchable()
+                        ,
                     TextColumn::make('KDGROUP')
                         ->badge()
                         ->label('Grup')
@@ -207,9 +207,9 @@ class ProdukListTable extends BaseWidget
                 'md' => 4,
                 'lg' => 5,
                 'xl' => 6,
-                '2xl' => 6,
+                '2xl' => 8,
             ])
-            ->paginated([12, 24, 36, 40, 50, 100, 'all'])
+            ->paginated([8, 16, 33, 40, 50, 100, 'all'])
             // ->paginated(false)
             ->actions([
                 // Tables\Actions\EditAction::make(),

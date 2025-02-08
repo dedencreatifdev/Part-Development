@@ -57,7 +57,7 @@ class DashboardOverview extends BaseWidget
             Stat::make('Booking Service', '21%')
                 ->description('7% increase')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
-            //     ->color('danger'),
+                ->color('danger'),
 
         ];
     }

@@ -198,15 +198,17 @@ class ProdukResource extends Resource
                 'sm' => 3,
                 'md' => 3,
                 'lg' => 4,
-                'xl' => 5,
-                '2xl' => 6,
+                'xl' => 6,
+                '2xl' => 8,
+                '3xl' => 10,
+                '4xl' => 12,
             ])
             // ->groups([
             //     'KDGROUP',
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([36, 50, 100, 'all'])
+            ->paginated([40, 80, 100, 'all'])
 
             ->filters([
                 SelectFilter::make('status')
