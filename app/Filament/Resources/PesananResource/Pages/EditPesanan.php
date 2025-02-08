@@ -15,6 +15,7 @@ class EditPesanan extends EditRecord
         return [
             Actions\ViewAction::make(),
             Actions\DeleteAction::make(),
+            Actions\Action::make('cetak_invoice')
         ];
     }
 }

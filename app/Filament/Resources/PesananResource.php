@@ -16,6 +16,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -114,36 +115,28 @@ class PesananResource extends Resource
                 TextColumn::make('relPelanggan.nama_customer')
                     ->label('Nama Cusromer')
                     ->searchable(),
-                TextColumn::make('relPelanggan.alamat')
-                    ->label('Alamat')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
-                    ->wrap()
-                    ->searchable(),
+                // TextColumn::make('relPelanggan.alamat')
+                //     ->label('Alamat')
+                //     ->size(TextColumn\TextColumnSize::ExtraSmall)
+                //     ->wrap()
+                //     ->searchable(),
                 TextColumn::make('relPelanggan.no_telp')
                     ->label('No Telp')
                     ->searchable(),
                 TextColumn::make('supplier_id')
                     ->searchable(),
-                TextColumn::make('lampiran')
-                    ->searchable(),
                 TextColumn::make('uang_muka')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
