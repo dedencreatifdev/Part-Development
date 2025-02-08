@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -36,22 +37,24 @@ class EstimasiResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_estimasi')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Stack::make([
+                    Tables\Columns\TextColumn::make('nama_estimasi')
+                        ->searchable(),
+                    Tables\Columns\ImageColumn::make('image'),
+
+                ]),
             ])
+            ->contentGrid([
+                'default' => 2,
+                'sm' => 3,
+                'md' => 3,
+                'lg' => 4,
+                'xl' => 6,
+                '2xl' => 8,
+                '3xl' => 10,
+                '4xl' => 12,
+            ])
+
             ->filters([
                 //
             ])
@@ -61,7 +64,7 @@ class EstimasiResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
