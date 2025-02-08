@@ -9,6 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 class ListEstimasis extends ListRecords
 {
     protected static string $resource = EstimasiResource::class;
+    protected static ?string $label = 'Daftar Estimasi';
 
     protected function getHeaderActions(): array
     {

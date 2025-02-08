@@ -21,6 +21,8 @@ class EstimasiResource extends Resource
     protected static ?string $model = Estimasi::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Estimasi';
+    protected static ?string $navigationGroup = 'Service';
 
     public static function form(Form $form): Form
     {
@@ -33,8 +35,6 @@ class EstimasiResource extends Resource
                     ->imageEditor()
                     ->imageEditorAspectRatios([
                         null,
-                        '16:9',
-                        '4:3',
                         '1:1',
                     ])
                     ->image()
