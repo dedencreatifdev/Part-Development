@@ -30,10 +30,13 @@ class EstimasiResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Forms\Components\FileUpload::make('image')
-                    // ->acceptedFileTypes(['storage'])
-                    // ->moveFiles(public_path())
-                    // ->storeFiles(false)
-                    // ->directory(app_path('image'))
+                    ->imageEditor()
+                    ->imageEditorAspectRatios([
+                        null,
+                        '16:9',
+                        '4:3',
+                        '1:1',
+                    ])
                     ->image()
                     ->required(),
             ]);
