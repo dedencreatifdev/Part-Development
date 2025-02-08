@@ -40,13 +40,14 @@ class EstimasiResource extends Resource
         return $table
             ->columns([
                 Stack::make([
-                    Tables\Columns\ImageColumn::make('gambar')
-                        ->defaultImageUrl(fn(Estimasi $record) => url('storage/app/public/') . $record->image)
+                    Tables\Columns\ImageColumn::make('gambars')
+                        ->defaultImageUrl(fn(Estimasi $record) => url('storage/app/public') . '/' . $record->image)
                         ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
                         ->size(TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->alignCenter()
+                        ->limit(20)
                         ->searchable(),
 
                 ]),
