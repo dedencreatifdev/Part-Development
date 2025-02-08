@@ -37,7 +37,6 @@ class DashboardOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-
             Stat::make('Produk List', Produk::count())
                 ->icon('heroicon-o-squares-2x2')
                 ->description('Item (Lihat Semua)')
