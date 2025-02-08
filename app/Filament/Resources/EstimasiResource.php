@@ -30,6 +30,9 @@ class EstimasiResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Forms\Components\FileUpload::make('image')
+                    ->acceptedFileTypes(['storage'])
+                    // ->storeFiles(false)
+                    ->moveFiles()
                     ->image()
                     ->required(),
             ]);
@@ -41,7 +44,9 @@ class EstimasiResource extends Resource
             ->columns([
                 Stack::make([
                     Tables\Columns\ImageColumn::make('image')
-                        ->acceptedFileTypes(['storage'])
+                        // ->acceptedFileTypes(['storage'])
+                        // ->storeFiles(false)
+                        // ->moveFiles()
                         // ->defaultImageUrl(fn(Estimasi $record) => url('storage/app/public') . '/' . $record->image)
                         ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
