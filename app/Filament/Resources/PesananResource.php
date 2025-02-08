@@ -10,6 +10,8 @@ use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Split;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,7 +26,7 @@ class PesananResource extends Resource
     protected static ?string $model = Pesanan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-envelope';
-    protected static ?string $navigationLabel = 'Pesanan Sparepart';
+    protected static ?string $navigationLabel = 'Pesanan';
     protected static ?string $navigationGroup = 'Sparepart';
     protected static ?int $navigationSort = 2;
 
@@ -32,36 +34,59 @@ class PesananResource extends Resource
     {
         return $form
             ->schema([
-                // Section::make()
-                //     ->relationship('relPelanggan')
-                //     ->schema([
-                //         TextInput::make('alamat')
-                //             ->disabled()
-                //             ->maxLength(100),
+                Split::make([
+                    Section::make([
+                        Select::make('pelanggan_id')
+                            ->label('Pelanggan')
+                            ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
+                            ->createOptionForm([
+                                TextInput::make('nama_customer')
+                                    ->required(),
+                                Textarea::make('alamat')
+                                    ->required(),
+                            ])
+                            ->required()
+                            ->searchable(),
+                        Textarea::make('alamat')
+                            ->readOnly()
+                            ->disabled()
+                            ->rows(3)
+                            ->default('Unit')
+                            ->maxLength(200),
+                        TextInput::make('no_telp')
+                            ->readOnly()
+                            ->disabled()
+                            ->maxLength(200)
+                            ->default('Data'),
+                        TextInput::make('type_kendaraan')
+                            ->readOnly()
+                            ->disabled()
+                            ->maxLength(200),
 
-                //     ]),
-                Select::make('pelanggan_id')
-                    ->label('Pelanggan')
-                    ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
-                    ->searchable(),
-                DateTimePicker::make('tanggal_ambil')
-                    ->required(),
-                TextInput::make('nama_pengambil')
-                    ->required()
-                    ->maxLength(100),
-                DateTimePicker::make('tanggal_datang')
-                    ->required(),
-                TextInput::make('supplier_id')
-                    ->required()
-                    ->maxLength(100),
-                TextInput::make('lampiran')
-                    ->required()
-                    ->maxLength(200),
-                TextInput::make('uang_muka')
-                    ->required()
-                    ->numeric(),
+                    ]),
+                    Section::make([
+                        DateTimePicker::make('tanggal_ambil')
+                            ->required(),
+                        TextInput::make('nama_pengambil')
+                            ->required()
+                            ->maxLength(100),
+                        DateTimePicker::make('tanggal_datang')
+                            ->required(),
+                        TextInput::make('supplier_id')
+                            ->required()
+                            ->maxLength(100),
+                        TextInput::make('lampiran')
+                            ->required()
+                            ->maxLength(200),
+                        TextInput::make('uang_muka')
+                            ->required()
+                            ->numeric(),
+
+                    ])->grow(false),
+                ])->from('md'),
+
             ])
-            ->columns(3)
+            ->columns(1)
             ->inlineLabel();
     }
 
@@ -71,7 +96,7 @@ class PesananResource extends Resource
             ->columns([
 
                 TextColumn::make('created_at')
-                ->label('Tgl Pesan')
+                    ->label('Tgl Pesan')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('relPelanggan.nama_customer')
@@ -83,7 +108,7 @@ class PesananResource extends Resource
                     ->wrap()
                     ->searchable(),
                 TextColumn::make('relPelanggan.no_telp')
-                    ->label('No Polisi')
+                    ->label('No Telp')
                     ->searchable(),
                 TextColumn::make('supplier_id')
                     ->searchable(),

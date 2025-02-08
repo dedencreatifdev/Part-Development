@@ -99,7 +99,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             // ->topNavigation()
             ->spa()
-            ->font('tahoma')
+            // ->font('tahoma')
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make()
