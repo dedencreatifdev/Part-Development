@@ -48,7 +48,7 @@ class Estimasi extends Page implements HasTable, HasForms
                     ImageColumn::make('avatar')
                         ->size('100%')
                         ->defaultImageUrl(function () {
-                            return url('' . storage_path('123456'));
+                            return storage_path('123456');
                         }),
                     TextColumn::make('kode_jenis')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
