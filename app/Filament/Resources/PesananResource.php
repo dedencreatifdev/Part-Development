@@ -20,6 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Symfony\Component\Uid\Uuid;
 
 class PesananResource extends Resource
 {
@@ -38,7 +39,8 @@ class PesananResource extends Resource
                     Section::make([
                         Select::make('pelanggan_id')
                             ->label('Pelanggan')
-                            ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
+                            // ->options(Pelanggan::all()->pluck('nama_customer', 'id'))
+                            ->relationship('relPelanggan', 'nama_customer')
                             ->createOptionForm([
                                 TextInput::make('nama_customer')
                                     ->required(),
@@ -46,6 +48,7 @@ class PesananResource extends Resource
                                     ->required(),
                             ])
                             ->required()
+                            ->preload()
                             ->searchable(),
                         Textarea::make('alamat')
                             ->readOnly()
