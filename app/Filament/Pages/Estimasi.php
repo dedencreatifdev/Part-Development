@@ -52,7 +52,6 @@ class Estimasi extends Page implements HasTable, HasForms
                         }),
                     TextColumn::make('kode_jenis')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
-                        ->sortable()
                         ->alignCenter(),
                     TextColumn::make('image'),
                 ]),
