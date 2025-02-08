@@ -11,6 +11,8 @@ use Filament\Pages\Page;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\ViewAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
@@ -42,7 +44,28 @@ class Estimasi extends Page implements HasTable, HasForms
         return $table
             ->query(ModelsEstimasi::query())
             ->columns([
-                TextColumn::make('kode_jenis')
+                Stack::make([
+                    ImageColumn::make('avatar')
+                        ->size('100%')
+                        ->defaultImageUrl(function () {
+                            return url(storage_path(''));
+                        }),
+                    TextColumn::make('kode_jenis')
+                        ->size(TextColumn\TextColumnSize::ExtraSmall)
+                        ->sortable()
+                        ->alignCenter(),
+                    TextColumn::make('image'),
+                ]),
+            ])
+            ->contentGrid([
+                'default' => 2,
+                'sm' => 3,
+                'md' => 3,
+                'lg' => 4,
+                'xl' => 6,
+                '2xl' => 8,
+                '3xl' => 10,
+                '4xl' => 12,
             ])
             ->actions([
                 ViewAction::make()
