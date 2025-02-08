@@ -8,8 +8,10 @@ use App\Models\Estimasi;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Columns\Layout\Stack;
+use Filament\Tables\Columns\TextColumn\TextColumnSize;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -41,6 +43,9 @@ class EstimasiResource extends Resource
                     Tables\Columns\ImageColumn::make('image')
                         ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
+                    ->size(TextColumnSize::ExtraSmall)
+                        ->weight(FontWeight::Bold)
+                        ->alignCenter()
                         ->searchable(),
 
                 ]),
