@@ -47,8 +47,10 @@ class EstimasiResource extends Resource
                             ])
                             ->image()
                             ->required(),
+                    ])->grow(false),
+                    Section::make([
+                        //
                     ]),
-                    Section::make([])->grow(false),
                 ])->from('md')
             ])->columns(1);
     }
