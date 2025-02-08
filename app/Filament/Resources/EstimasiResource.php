@@ -38,9 +38,10 @@ class EstimasiResource extends Resource
         return $table
             ->columns([
                 Stack::make([
+                    Tables\Columns\ImageColumn::make('image')
+                        ->size('100%'),
                     Tables\Columns\TextColumn::make('nama_estimasi')
                         ->searchable(),
-                    Tables\Columns\ImageColumn::make('image'),
 
                 ]),
             ])
