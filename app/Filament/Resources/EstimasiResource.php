@@ -32,7 +32,7 @@ class EstimasiResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->acceptedFileTypes(['storage'])
                     // ->storeFiles(false)
-                    ->moveFiles()
+                    ->moveFiles('storage')
                     ->image()
                     ->required(),
             ]);
