@@ -4,6 +4,8 @@ namespace App\Filament\Resources\EstimasiResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
@@ -69,6 +71,14 @@ class RelEstimasiKendaraanRelationManager extends RelationManager
                 Tables\Actions\BulkActionGroup::make([
                     // Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('kendaraan_id')
             ]);
     }
 }

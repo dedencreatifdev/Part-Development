@@ -11,6 +11,9 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Split;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\Section as ComponentsSection;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
@@ -116,5 +119,22 @@ class EstimasiResource extends Resource
             'view' => Pages\ViewEstimasi::route('/{record}'),
             'edit' => Pages\EditEstimasi::route('/{record}/edit'),
         ];
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+
+            ->schema([
+                ComponentsSection::make()
+                ->heading('Estimasi')
+                    ->schema([
+                        TextEntry::make('nama_estimasi')
+                            ->icon('heroicon-o-user')
+                            ->iconColor('blue')
+
+                    ]),
+            ])
+            ->inlineLabel();
     }
 }
