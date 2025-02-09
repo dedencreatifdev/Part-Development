@@ -5,7 +5,11 @@ namespace App\Filament\Resources\EstimasiResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
+use Filament\Tables\Columns\Layout\Stack;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextColumn\TextColumnSize;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,9 +33,26 @@ class RelEstimasiKendaraanRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('estimasi_id')
             ->columns([
-                Tables\Columns\TextColumn::make('estimasi_id'),
-                Tables\Columns\TextColumn::make('kendaraan_id'),
+                Stack::make([
+
+                    // TextColumn::make('estimasi_id'),
+                    TextColumn::make('kendaraan_id')
+                        ->size(TextColumnSize::ExtraSmall)
+                        ->weight(FontWeight::Bold)
+                        ->alignCenter(),
+                ]),
             ])
+            ->contentGrid([
+                'default' => 2,
+                'sm' => 3,
+                'md' => 3,
+                'lg' => 4,
+                'xl' => 6,
+                '2xl' => 8,
+                '3xl' => 10,
+                '4xl' => 12,
+            ])
+
             ->filters([
                 //
             ])
@@ -45,7 +66,7 @@ class RelEstimasiKendaraanRelationManager extends RelationManager
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
