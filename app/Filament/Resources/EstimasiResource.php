@@ -36,10 +36,8 @@ class EstimasiResource extends Resource
 
                 Split::make([
                     Section::make([
-                        TextInput::make('nama_estimasi')
-                            ->required()
-                            ->maxLength(100),
                         FileUpload::make('image')
+                            // ->visibleOn('xl')
                             ->imageEditor()
                             ->imageEditorAspectRatios([
                                 null,
@@ -50,6 +48,9 @@ class EstimasiResource extends Resource
                     ])->grow(false),
                     Section::make([
                         //
+                        TextInput::make('nama_estimasi')
+                            ->required()
+                            ->maxLength(100),
                     ]),
                 ])->from('md')
             ])->columns(1);
