@@ -16,5 +16,13 @@ class Estimasi extends Model
     protected $table = 'estimasi';
     protected $guarded = [];
 
-
+    /**
+     * Get the user that owns the Estimasi
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function relEstimasiKendaraan(): HasMany
+    {
+        return $this->HasMany(EstimasiKendaraan::class, 'estimasi_id', 'id');
+    }
 }
