@@ -31,7 +31,7 @@ class RelEstimasiKendaraanRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('estimasi_id')
+            ->recordTitleAttribute('kendaraan_id')
             ->columns([
                 Stack::make([
 
