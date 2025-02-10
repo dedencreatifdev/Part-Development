@@ -17,7 +17,7 @@
                 </p>
                 <p class="text-xs text-gray-500 dark:text-gray-400">
                     {{-- {{ filament()->getUserName($user) }} --}}
-                    Silahkan Contact Administrator untuk mendapatkan akses lebih lanjut
+                    Silahkan Contact Administrator untuk mendapatkan akses lebih lanjut WhatsApp : 0822-8006-5006
                 </p>
             </div>
 
