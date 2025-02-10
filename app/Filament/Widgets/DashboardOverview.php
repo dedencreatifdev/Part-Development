@@ -43,18 +43,18 @@ class DashboardOverview extends BaseWidget
                 ->color('primary')
                 ->descriptionIcon('heroicon-o-square-3-stack-3d', IconPosition::Before)
                 ->url(route('filament.admin.resources.produks.index')),
-            Stat::make('Pesanan', '-')
+            Stat::make('Pesanan', '86%')
                 ->icon('heroicon-o-envelope-open')
-                ->description('32k increase')
+                ->description('(Dalam Proses Development)')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
-                Stat::make('Estimasi', '-')
+                Stat::make('Estimasi', '50%')
                 ->icon('heroicon-o-newspaper')
-                ->description('7% increase')
+                ->description('(Dalam Proses Development)')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
                 ->color('danger'),
             Stat::make('Booking Service', '21%')
-                ->description('7% increase')
+                ->description('(Dalam Proses Development)')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
                 ->color('danger'),
 
