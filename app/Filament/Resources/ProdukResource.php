@@ -157,6 +157,7 @@ class ProdukResource extends Resource
                         ->limit(15)
                         ->searchable(),
                     TextColumn::make('KDGROUP')
+                    ->prefix('Grup : ')
                         ->label('Grup')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
