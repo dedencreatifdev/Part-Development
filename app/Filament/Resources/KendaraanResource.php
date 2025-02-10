@@ -14,11 +14,15 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class KendaraanResource extends Resource
@@ -134,18 +138,21 @@ class KendaraanResource extends Resource
             ->paginated([20, 50, 100, 'all'])
 
             ->filters([
-                SelectFilter::make('kdjns')
+                SelectFilter::make('tahun')
                     // ->relationship('author', 'name')
-                    ->options(Kendaraan::pluck('kdjns', 'kdjns'))
+                    ->options(Kendaraan::pluck('tahun', 'tahun'))
                     ->searchable()
                     ->preload(),
                 SelectFilter::make('kendaraan')
                     // ->relationship('author', 'name')
                     ->options(Kendaraan::pluck('kendaraan', 'kendaraan'))
                     ->searchable()
-                    ->preload(),
-            ], layout: FiltersLayout::AboveContent)->filtersFormColumns(4)
+                    ->preload()
+                    ->columnSpan(2),
+                // TextColumn::make('kendaraan'),
+            ], layout: FiltersLayout::AboveContent)->filtersFormColumns(6)
 
+            ->selectable()
 
             ->actions([
                 ActionGroup::make([
@@ -161,11 +168,26 @@ class KendaraanResource extends Resource
                         ->label('Hapus')
                         // ->icon('heroicon-o-clipboard-document-list')
                         ->color('danger'),
-                ])
+
+
+                ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    Action::make('copyToSelected')
+                        ->label('')
+                        ->color('danger')
+                        ->icon('heroicon-o-clipboard')
+                        ->accessSelectedRecords()
+                        ->action(function (Model $record, Collection $selectedRecords) {
+                            $selectedRecords->each(
+                                fn(Model $selectedRecord) => $selectedRecord->update([
+                                    'km_hari' => '123456',
+                                ]),
+                            );
+                        }),
+
                 ]),
             ]);
     }

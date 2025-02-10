@@ -22,7 +22,7 @@
 
     <section
         @class([
-            'flex flex-col gap-y-8 py-8',
+            'flex flex-col gap-y-2 py-4',
             'h-full' => $fullHeight,
         ])
     >
@@ -99,7 +99,7 @@
 
             <div
                 @class([
-                    'grid flex-1 auto-cols-fr gap-y-8',
+                    'grid flex-1 auto-cols-fr gap-y-2',
                     'h-full' => $fullHeight,
                 ])
             >

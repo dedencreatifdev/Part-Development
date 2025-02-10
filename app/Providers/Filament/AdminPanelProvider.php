@@ -98,7 +98,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             // ->topNavigation()
-            ->spa()
+            // ->spa()
             ->font('verdana')
             ->sidebarWidth('16rem')
             ->navigationGroups([

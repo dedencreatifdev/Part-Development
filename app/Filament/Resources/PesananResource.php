@@ -8,6 +8,7 @@ use App\Models\Pelanggan;
 use App\Models\Pesanan;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Split;
@@ -97,6 +98,15 @@ class PesananResource extends Resource
 
                     ])->grow(false),
                 ])->from('md'),
+                Repeater::make('data')
+                    ->schema([
+                        TextInput::make('name')->required(),
+                        TextInput::make('name')->required(),
+                        TextInput::make('name')->required(),
+                        // ...
+                    ]),
+                Section::make()
+                    ->schema([]),
 
             ])
             ->columns(1)

@@ -12,7 +12,7 @@ use Illuminate\Notifications\Notifiable;
 
 class EstimasiKendaraan extends Model
 {
-    use HasFactory, Notifiable, SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes, HasUuids;
     protected $table = 'estimasi_kendaraan';
     protected $guarded = [];
 
@@ -23,6 +23,6 @@ class EstimasiKendaraan extends Model
      */
     public function relKendaraan(): BelongsTo
     {
-        return $this->BelongsTo(Kendaraan::class,'kode_jenis','kendaraan');
+        return $this->BelongsTo(Kendaraan::class, 'kode_jenis', 'kendaraan');
     }
 }
