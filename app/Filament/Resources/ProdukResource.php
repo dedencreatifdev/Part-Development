@@ -32,10 +32,10 @@ class ProdukResource extends Resource
     protected static ?string $navigationGroup = 'Sparepart';
     protected static ?int $navigationSort = 1;
 
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()->whereNot('FT_NMGROUP', 'sm');
-    }
+    // public static function getEloquentQuery(): Builder
+    // {
+    //     return parent::getEloquentQuery()->whereNot('FT_NMGROUP', 'sm');
+    // }
 
     public static function form(Form $form): Form
     {
@@ -139,7 +139,7 @@ class ProdukResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->description('Daftar Harga Produk MITSUBISHI Budi Berlian Motor')
+            ->description('Daftar Harga Produk MITSUBISHI')
             ->columns([
                 Stack::make([
                     // Columns
@@ -162,16 +162,20 @@ class ProdukResource extends Resource
                         ->searchable(),
                     TextColumn::make('relLokasiRak.rak')
                         ->prefix('Lokasi : ')
-                        ->suffix('(Tuba)')
+                        ->suffix(' (Tuba)')
                         ->default('-')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('SATUAN')
+                    ->prefix('Satuan : ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
-                    TextColumn::make('HRG_JUAL')
+                        TextColumn::make('HRG_JUAL')
                         ->prefix('Rp ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->numeric(),
+                        TextColumn::make('KETERANGAN')
+                        ->prefix('Part Rel : ')
+                            ->size(TextColumn\TextColumnSize::ExtraSmall),
                 ]),
             ])
             ->contentGrid([
@@ -187,7 +191,7 @@ class ProdukResource extends Resource
             // ])
             // ->defaultGroup('FT_NMGROUP')
 
-            ->paginated([35, 70, 80, 100, 'all'])
+            ->paginated([28, 42, 56, 70, 'all'])
 
             ->filters([
                 // SelectFilter::make('status')
@@ -264,12 +268,19 @@ class ProdukResource extends Resource
                             ->prefix('Rp ')
                             ->numeric(2)
                             ->label('Harga'),
+
+                        TextEntry::make('KETERANGAN')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Keterangan'),
+                        TextEntry::make('STATUS')
+                            ->size(TextEntry\TextEntrySize::ExtraSmall)
+                            ->label('Status'),
                     ])->columns(2),
 
                 ])->from('md'),
 
                 Section::make()
-                    ->description('Riawayat Produk')
+                    ->description('Kode Part Pengganti')
                     ->schema([]),
             ])
             ->columns(1)
