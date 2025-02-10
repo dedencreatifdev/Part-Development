@@ -4,10 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProdukResource\Pages;
 use App\Filament\Resources\ProdukResource\RelationManagers;
+use App\Filament\Resources\ProdukResource\RelationManagers\ProdukRelationManager;
 use App\Models\Produk;
+use DateTime;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\Split;
 use Filament\Infolists\Components\TextEntry;
@@ -157,7 +160,7 @@ class ProdukResource extends Resource
                         ->limit(15)
                         ->searchable(),
                     TextColumn::make('KDGROUP')
-                    ->prefix('Grup : ')
+                        ->prefix('Grup : ')
                         ->label('Grup')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->searchable(),
@@ -167,16 +170,16 @@ class ProdukResource extends Resource
                         ->default('-')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
                     TextColumn::make('SATUAN')
-                    ->prefix('Satuan : ')
+                        ->prefix('Satuan : ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall),
-                        TextColumn::make('HRG_JUAL')
+                    TextColumn::make('HRG_JUAL')
                         ->prefix('Rp ')
                         ->size(TextColumn\TextColumnSize::ExtraSmall)
                         ->weight(FontWeight::Bold)
                         ->numeric(),
-                        TextColumn::make('KETERANGAN')
+                    TextColumn::make('KETERANGAN')
                         ->prefix('Part Rel : ')
-                            ->size(TextColumn\TextColumnSize::ExtraSmall),
+                        ->size(TextColumn\TextColumnSize::ExtraSmall),
                 ]),
             ])
             ->contentGrid([
@@ -222,7 +225,7 @@ class ProdukResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ProdukRelationManager::class,
         ];
     }
 
@@ -273,16 +276,25 @@ class ProdukResource extends Resource
                         TextEntry::make('KETERANGAN')
                             ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Keterangan'),
-                        TextEntry::make('STATUS')
+                        TextEntry::make('ID_KODE')
                             ->size(TextEntry\TextEntrySize::ExtraSmall)
                             ->label('Status'),
-                    ])->columns(2),
+                        TextEntry::make('TG_DAFTAR')
+                            ->label('Registered')
+                            ->dateTime(),
+                        // TextEntry::make('relProduk')
+                        //     ->label('Registered')
+                    ])->columns(1),
 
                 ])->from('md'),
 
-                Section::make()
-                    ->description('Kode Part Pengganti')
-                    ->schema([]),
+                // Section::make()
+                //     ->description('Kode Part Pengganti')
+                //     ->relationship('relProduk')
+                //     ->schema([
+                //         TextEntry::make('NAMA'),
+
+                //     ]),
             ])
             ->columns(1)
             ->inlineLabel()

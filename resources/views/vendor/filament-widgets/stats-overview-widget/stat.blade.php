@@ -48,14 +48,14 @@
             @endif
 
             <span
-                class="text-sm text-gray-500 font-xl fi-wi-stats-overview-stat-label dark:text-gray-400 "
+                class="text-sm text-gray-500 font-md fi-wi-stats-overview-stat-label dark:text-gray-400 "
             >
                 {{ $getLabel() }}
             </span>
         </div>
 
         <div
-            class="text-3xl font-semibold tracking-tight fi-wi-stats-overview-stat-value text-gray-950 dark:text-white"
+            class="text-xl font-semibold tracking-tight fi-wi-stats-overview-stat-value text-gray-950 dark:text-white"
         >
             {{ $getValue() }}
         </div>
