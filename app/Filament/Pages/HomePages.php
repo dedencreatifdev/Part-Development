@@ -16,7 +16,7 @@ class HomePages extends Page
     protected static ?string $navigationIcon = 'heroicon-o-home';
     protected static ?string $navigationLabel = 'Dashboard';
     protected static ?string $title = 'Dashboard';
-    protected ?string $subheading = 'Custom Page Subheading';
+    // protected ?string $subheading = 'Custom Page Subheading';
 
     protected static string $view = 'filament.pages.home-pages';
 
