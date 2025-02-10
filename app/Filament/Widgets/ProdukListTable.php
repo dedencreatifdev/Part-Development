@@ -145,8 +145,8 @@ class ProdukListTable extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
-            ->heading('Produk List')
-            ->description('Daftar Harga Produk MITSUBISHI Budi Berlian Motor')
+            ->heading('')
+            ->description('Daftar Harga Sparepart MITSUBISHI')
             ->headerActions([
                 Action::make('lihat_semua')
                     // ->badge()

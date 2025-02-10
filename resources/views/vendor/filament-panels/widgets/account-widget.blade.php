@@ -12,7 +12,7 @@
                     {{ __('filament-panels::widgets/account-widget.welcome', ['app' => config('app.name')]) }}
                 </h2>
 
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-sm font-semibold text-success-600 dark:text-gray-400">
                     {{ filament()->getUserName($user) }}
                 </p>
                 <p class="text-xs text-gray-500 dark:text-gray-400">
