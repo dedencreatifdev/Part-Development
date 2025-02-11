@@ -36,7 +36,7 @@ class AdminPanelProvider extends PanelProvider
             ->registration()
             ->profile(isSimple: false)
             ->loginRouteSlug('login')
-            ->registrationRouteSlug('register')
+            ->registrationRouteSlug('daftar')
             ->passwordResetRoutePrefix('password-reset')
             ->passwordResetRequestRouteSlug('request')
             ->passwordResetRouteSlug('reset')
