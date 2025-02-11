@@ -17,12 +17,12 @@ class registerMember extends Register
                     ->schema([
                         $this->getNameFormComponent()
                             ->prefixIcon('heroicon-o-user'),
-                        TextInput::make('departement')
+                        TextInput::make('user_name')
                             ->prefixIcon('heroicon-o-lock-closed')
                             ->autofocus()
                             ->required()
                             ->maxLength(255),
-                        TextInput::make('user_name')
+                        TextInput::make('departement')
                             ->prefixIcon('heroicon-o-lock-closed')
                             ->autofocus()
                             ->required()
