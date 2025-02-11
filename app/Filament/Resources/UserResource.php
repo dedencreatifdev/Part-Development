@@ -39,6 +39,8 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('password')
                     ->password()
                     // ->required()
+                    ->revealable()
+                    ->dehydrated(false)
                     ->maxLength(255),
                 Forms\Components\Select::make('roles')
                     ->relationship('roles', 'name')
