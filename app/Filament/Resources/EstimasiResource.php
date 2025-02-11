@@ -27,7 +27,7 @@ class EstimasiResource extends Resource
 {
     protected static ?string $model = Estimasi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Estimasi';
     protected static ?string $navigationGroup = 'Service';
 

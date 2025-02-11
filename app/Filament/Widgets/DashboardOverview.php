@@ -48,7 +48,7 @@ class DashboardOverview extends BaseWidget
                 ->description('(Dalam Proses Development)')
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->color('success'),
-                Stat::make('Estimasi', '50%')
+            Stat::make('Estimasi', '50%')
                 ->icon('heroicon-o-newspaper')
                 ->description('(Dalam Proses Development)')
                 ->descriptionIcon('heroicon-m-arrow-trending-down')
@@ -60,5 +60,4 @@ class DashboardOverview extends BaseWidget
 
         ];
     }
-
 }

@@ -21,7 +21,7 @@ class RakResource extends Resource
 {
     protected static ?string $model = Rak::class;
     // use HasPageShield;
-    protected static ?string $navigationIcon = 'heroicon-o-bars-arrow-down';
+    // protected static ?string $navigationIcon = 'heroicon-o-bars-arrow-down';
     protected static ?string $navigationGroup = 'Master Data';
 
     public static function form(Form $form): Form

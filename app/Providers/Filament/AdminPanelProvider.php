@@ -103,10 +103,13 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
             ->navigationGroups([
                 NavigationGroup::make()
+                    ->icon('heroicon-m-squares-2x2')
                     ->label('Sparepart'),
                 NavigationGroup::make()
+                    ->icon('heroicon-m-truck')
                     ->label('Service'),
                 NavigationGroup::make()
+                ->icon('heroicon-m-rectangle-stack')
                     ->label('Master Data'),
                 NavigationGroup::make()
                     ->label(__('Settings')),

@@ -30,7 +30,7 @@ class ProdukResource extends Resource
 {
     protected static ?string $model = Produk::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+    // protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
     protected static ?string $navigationLabel = 'Produk List';
     protected static ?string $navigationGroup = 'Sparepart';
     protected static ?int $navigationSort = 1;

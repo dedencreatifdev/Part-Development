@@ -42,12 +42,12 @@
             @if ($icon)
                 <x-filament::icon
                     :icon="$icon"
-                    class="fi-sidebar-group-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                    class="fi-sidebar-group-icon h-6 w-6 text-primary-400 dark:text-gray-500"
                 />
             @endif
 
             <span
-                class="fi-sidebar-group-label flex-1 text-sm font-semibold text-primary-500 leading-6 text-gray-500 dark:text-gray-400"
+                class="fi-sidebar-group-label flex-1 text-sm font-normal text-primary-500 leading-6 text-gray-500 dark:text-gray-400"
             >
                 {{ $label }}
             </span>
