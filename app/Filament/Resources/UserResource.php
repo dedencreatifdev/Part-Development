@@ -72,6 +72,7 @@ class UserResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->poll('10s')
             ->filters([
                 //
             ])
