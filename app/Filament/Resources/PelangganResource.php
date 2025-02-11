@@ -62,24 +62,24 @@ class PelangganResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('no_polisi')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('nama_customer')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('alamat')
                 ->wrap()
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('no_telp')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('no_wo')
                     ->visibleOn('md')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('type_kendaraan')
-                    ->size(TextColumn\TextColumnSize::ExtraSmall)
+                    // ->size(TextColumn\TextColumnSize::ExtraSmall)
                     ->searchable(),
                 TextColumn::make('no_chasis')
                     ->searchable()
