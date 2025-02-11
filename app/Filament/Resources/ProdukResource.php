@@ -211,7 +211,7 @@ class ProdukResource extends Resource
                 // Tables\Actions\DeleteAction::make(),
                 Tables\Actions\ViewAction::make()
                     ->size(ActionSize::ExtraSmall)
-                    ->label('Lihat Detail')
+                    ->label('Detail')
                     ->icon('heroicon-o-clipboard-document-list')
                     ->color('primary'),
             ])
