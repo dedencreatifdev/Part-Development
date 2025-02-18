@@ -61,9 +61,7 @@
         {{--  --}}
 
 <style>
-    * {
-        /* font-size: 0.97em; */
-    }
+
 </style>
 
         {{--  --}}
@@ -73,6 +71,10 @@
                 --sidebar-width: {{ filament()->getSidebarWidth() }};
                 --collapsed-sidebar-width: {{ filament()->getCollapsedSidebarWidth() }};
                 --default-theme-mode: {{ filament()->getDefaultThemeMode()->value }};
+            }
+
+            body {
+                font-size: 0.95em;
             }
         </style>
 

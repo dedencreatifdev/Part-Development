@@ -31,9 +31,9 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
+            // ->default()
             ->id('admin')
-            ->path('')
+            ->path('admin')
             ->login()
             ->registration(registerMember::class)
             ->profile(editProfile::class, isSimple: false)
