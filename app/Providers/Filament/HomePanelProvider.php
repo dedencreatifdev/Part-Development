@@ -28,7 +28,7 @@ class HomePanelProvider extends PanelProvider
         return $panel
             // ->default()
             ->id('home')
-            ->path('')
+            ->path('home')
             ->login()
             // ->registration(registerMember::class)
             // ->profile(EditProfile::class, isSimple: false)
@@ -58,7 +58,7 @@ class HomePanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                // Authenticate::class,
+                Authenticate::class,
             ])
             ->font('tahoma')
             ->topNavigation()
