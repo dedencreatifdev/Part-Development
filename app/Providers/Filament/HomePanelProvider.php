@@ -26,20 +26,20 @@ class HomePanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-        ->default()
+            ->default()
             ->id('home')
             ->path('')
             ->login()
-            ->registration(registerMember::class)
-            ->profile(EditProfile::class, isSimple: false)
+            // ->registration(registerMember::class)
+            // ->profile(EditProfile::class, isSimple: false)
             ->colors([
                 'primary' => Color::Amber,
             ])
             ->discoverResources(in: app_path('Filament/Home/Resources'), for: 'App\\Filament\\Home\\Resources')
             ->discoverPages(in: app_path('Filament/Home/Pages'), for: 'App\\Filament\\Home\\Pages')
             ->pages([
-                // Pages\Dashboard::class,
-                HomePages::class,
+                Pages\Dashboard::class,
+                // HomePages::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Home/Widgets'), for: 'App\\Filament\\Home\\Widgets')
             ->widgets([
@@ -62,6 +62,6 @@ class HomePanelProvider extends PanelProvider
             ])
             ->font('tahoma')
             ->topNavigation()
-            ;
+        ;
     }
 }

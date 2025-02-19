@@ -73,9 +73,9 @@
                 --default-theme-mode: {{ filament()->getDefaultThemeMode()->value }};
             }
 
-            body {
+            /* body {
                 font-size: 0.95em;
-            }
+            } */
         </style>
 
         @stack('styles')
