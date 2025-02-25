@@ -19,7 +19,10 @@ class OpnameMmksiResource extends Resource
 {
     protected static ?string $model = OpnameMmksi::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    // protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Opname MMKSI';
+    protected static ?string $navigationGroup = 'Sparepart';
+    // protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -82,11 +85,14 @@ class OpnameMmksiResource extends Resource
                 Tables\Columns\TextColumn::make('kode')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nama')
+                    ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('harga')
+                    ->visibleFrom('sm')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('hpp')
+                    ->visibleFrom('sm')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('stok')
@@ -101,32 +107,9 @@ class OpnameMmksiResource extends Resource
                 Tables\Columns\TextColumn::make('sell')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('cek')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('tertukar')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('part_terukar')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('gudang')
+                    ->visibleFrom('sm')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('keterangan')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->date()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
