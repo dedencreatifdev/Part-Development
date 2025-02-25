@@ -11,6 +11,8 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -82,35 +84,32 @@ class OpnameMmksiResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode')
+                TextColumn::make('kode')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('nama')
-                    ->wrap()
+                TextColumn::make('nama')
+                    // ->wrap()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('harga')
+                TextColumn::make('harga')
+                    ->alignEnd()
                     ->visibleFrom('sm')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('hpp')
+                    ->numeric(decimalPlaces: 0),
+                TextColumn::make('hpp')
+                    ->alignEnd()
                     ->visibleFrom('sm')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('stok')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('fisik')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('so')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('sell')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('gudang')
+                    ->numeric(decimalPlaces: 0),
+                TextColumn::make('stok')
+                    ->numeric(),
+                TextColumn::make('fisik')
+                    ->numeric(),
+                TextColumn::make('so')
+                    ->numeric(),
+                TextColumn::make('sell')
+                    ->numeric(),
+                TextColumn::make('gudang')
                     ->visibleFrom('sm')
                     ->searchable(),
             ])
+            ->striped()
             ->filters([
                 //
             ])
