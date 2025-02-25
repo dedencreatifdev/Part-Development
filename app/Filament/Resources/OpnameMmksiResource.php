@@ -71,7 +71,8 @@ class OpnameMmksiResource extends Resource
                 TextInput::make('keterangan')
                     ->maxLength(100)
                     ->default(null),
-            ]);
+            ])
+            ->columns(4);
     }
 
     public static function table(Table $table): Table
