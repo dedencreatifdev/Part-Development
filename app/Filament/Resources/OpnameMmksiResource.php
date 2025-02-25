@@ -31,15 +31,19 @@ class OpnameMmksiResource extends Resource
         return $form
             ->schema([
                 TextInput::make('kode')
+                    ->disabledOn('edit')
                     ->maxLength(25)
                     ->default(null),
                 TextInput::make('nama')
+                    ->disabledOn('edit')
                     ->maxLength(50)
                     ->default(null),
                 TextInput::make('harga')
+                    ->disabledOn('edit')
                     ->numeric()
                     ->default(null),
                 TextInput::make('hpp')
+                    ->disabledOn('edit')
                     ->numeric()
                     ->default(null),
                 TextInput::make('stok')
@@ -54,19 +58,9 @@ class OpnameMmksiResource extends Resource
                 TextInput::make('sell')
                     ->numeric()
                     ->default(2),
-                TextInput::make('status')
-                    ->maxLength(20)
-                    ->default(null),
-                TextInput::make('cek')
-                    ->numeric()
-                    ->default(2),
                 Toggle::make('tertukar')
                     ->onColor('success')
                     ->offColor('danger'),
-                // TextInput::make('tertukar')
-                //     ->required()
-                //     ->numeric()
-                //     ->default(0),
                 TextInput::make('part_terukar')
                     ->maxLength(250)
                     ->default(null),
@@ -77,7 +71,8 @@ class OpnameMmksiResource extends Resource
                     ->maxLength(100)
                     ->default(null),
             ])
-            ->columns(4);
+            ->inlineLabel()
+            ->columns(3);
     }
 
     public static function table(Table $table): Table

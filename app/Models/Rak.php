@@ -10,4 +10,5 @@ class Rak extends Model
 {
     use HasFactory, Notifiable;
     protected $table = 'rak';
+    protected $guarded = [];
 }
